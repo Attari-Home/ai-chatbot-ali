@@ -1,0 +1,87 @@
+<!-- Ali Robotics Team Website -->
+<div class="min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-white shadow-sm border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img class="h-8 w-8" src="/assets/images/logo.svg" alt="Ali Robotics Team">
+          <span class="ml-2 text-xl font-bold text-gray-900">Ali Robotics</span>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          <a routerLink="/" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Home</a>
+          <a routerLink="/about" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">About</a>
+          <a routerLink="/team" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Team</a>
+          <a routerLink="/projects" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Projects</a>
+          <a routerLink="/events" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Events</a>
+          <a routerLink="/gallery" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Gallery</a>
+          <a routerLink="/blog" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Blog</a>
+          <a routerLink="/contact" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Contact</a>
+        </nav>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button type="button" class="text-gray-700 hover:text-primary-600">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- About -->
+        <div class="col-span-1 md:col-span-2">
+          <div class="flex items-center mb-4">
+            <img class="h-8 w-8" src="/assets/images/logo.svg" alt="Ali Robotics Team">
+            <span class="ml-2 text-xl font-bold">Ali Robotics</span>
+          </div>
+          <p class="text-gray-300 mb-4">
+            Building the future, one robot at a time. We are a passionate group of students 
+            from Ali School dedicated to STEM education through competitive robotics.
+          </p>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a routerLink="/about" class="text-gray-300 hover:text-white">About Us</a></li>
+            <li><a routerLink="/team" class="text-gray-300 hover:text-white">Our Team</a></li>
+            <li><a routerLink="/projects" class="text-gray-300 hover:text-white">Projects</a></li>
+            <li><a routerLink="/events" class="text-gray-300 hover:text-white">Events</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">Contact</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>Ali School</li>
+            <li>Dubai, UAE</li>
+            <li>team&#64;ali-robotics.school.ae</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-8 pt-8 border-t border-gray-800">
+        <p class="text-center text-gray-400">
+          © 2024 Ali Robotics Team. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>

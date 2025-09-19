@@ -1,0 +1,49 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About", 
+    "team": "Team",
+    "projects": "Projects",
+    "events": "Events",
+    "gallery": "Gallery",
+    "blog": "Blog",
+    "sponsors": "Sponsors",
+    "join": "Join Us",
+    "contact": "Contact"
+  },
+  "home": {
+    "heroTitle": "Ali Robotics Team",
+    "heroSubtitle": "Building the Future, One Robot at a Time",
+    "heroDescription": "We are a passionate group of students from Ali School dedicated to STEM education through competitive robotics.",
+    "heroCtaPrimary": "Meet Our Team",
+    "heroCta`Secondary": "View Projects",
+    "latestNewsTitle": "Latest News",
+    "upcomingEventsTitle": "Upcoming Events"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email Address", 
+      "emailPlaceholder": "Enter your email",
+      "subject": "Subject",
+      "subjectPlaceholder": "What is this about?",
+      "message": "Message",
+      "messagePlaceholder": "Your message here...",
+      "parentConsent": "I am under 18 and have parental consent",
+      "privacyConsent": "I agree to the privacy policy",
+      "submit": "Send Message",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    }
+  },
+  "footer": {
+    "description": "Ali Robotics Team - Inspiring the next generation of engineers and innovators.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact Info",
+    "followUs": "Follow Us",
+    "copyright": "© 2024 Ali Robotics Team. All rights reserved."
+  }
+}

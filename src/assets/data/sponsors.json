@@ -1,0 +1,202 @@
+[
+  {
+    "id": "sponsor001",
+    "name": "Tech Innovations Corp",
+    "type": "Platinum",
+    "logo": "/assets/images/sponsors/tech-innovations.png",
+    "website": "https://techcorp.example.com",
+    "description": "Leading technology company providing cutting-edge robotics components and mentorship.",
+    "contribution": {
+      "monetary": 15000,
+      "inkind": ["Electronic Components", "Technical Mentorship", "Facility Access"]
+    },
+    "partnership_since": "2022",
+    "contact": {
+      "name": "Jennifer Martinez",
+      "title": "Community Relations Manager",
+      "email": "partnerships@techcorp.example.com",
+      "phone": "+1-555-0200"
+    },
+    "featured": true
+  },
+  {
+    "id": "sponsor002",
+    "name": "Regional Manufacturing Solutions",
+    "type": "Gold",
+    "logo": "/assets/images/sponsors/rms-logo.png", 
+    "website": "https://rmssolutions.example.com",
+    "description": "Industrial manufacturing company specializing in precision machining and fabrication services.",
+    "contribution": {
+      "monetary": 8000,
+      "inkind": ["Machining Services", "Metal Materials", "Equipment Training"]
+    },
+    "partnership_since": "2023",
+    "contact": {
+      "name": "Robert Chen", 
+      "title": "Operations Director",
+      "email": "community@rmssolutions.example.com",
+      "phone": "+1-555-0201"
+    },
+    "featured": true
+  },
+  {
+    "id": "sponsor003",
+    "name": "Educational District Foundation",
+    "type": "Gold",
+    "logo": "/assets/images/sponsors/edf-logo.png",
+    "website": "https://edfoundation.example.com",
+    "description": "Non-profit foundation dedicated to advancing STEM education in local schools.",
+    "contribution": {
+      "monetary": 10000,
+      "inkind": ["Grant Writing Support", "Educational Resources", "Event Coordination"]
+    },
+    "partnership_since": "2021",
+    "contact": {
+      "name": "Dr. Amanda Foster",
+      "title": "Executive Director", 
+      "email": "grants@edfoundation.example.com",
+      "phone": "+1-555-0202"
+    },
+    "featured": true
+  },
+  {
+    "id": "sponsor004",
+    "name": "Local Auto Dealers Association",
+    "type": "Silver", 
+    "logo": "/assets/images/sponsors/lada-logo.png",
+    "website": "https://localautodealers.example.com",
+    "description": "Association of local automotive dealers supporting community education initiatives.",
+    "contribution": {
+      "monetary": 5000,
+      "inkind": ["Transportation", "Event Venues", "Marketing Support"]
+    },
+    "partnership_since": "2023",
+    "contact": {
+      "name": "Mark Thompson",
+      "title": "Community Outreach Coordinator",
+      "email": "community@localautodealers.example.com", 
+      "phone": "+1-555-0203"
+    },
+    "featured": false
+  },
+  {
+    "id": "sponsor005",
+    "name": "Community Bank & Trust",
+    "type": "Silver",
+    "logo": "/assets/images/sponsors/cbt-logo.png",
+    "website": "https://communitybank.example.com", 
+    "description": "Local banking institution committed to supporting youth education and development programs.",
+    "contribution": {
+      "monetary": 4000,
+      "inkind": ["Financial Literacy Workshops", "Banking Services", "Event Sponsorship"]
+    },
+    "partnership_since": "2022",
+    "contact": {
+      "name": "Lisa Rodriguez",
+      "title": "Community Relations Specialist",
+      "email": "community@communitybank.example.com",
+      "phone": "+1-555-0204"
+    },
+    "featured": false
+  },
+  {
+    "id": "sponsor006",
+    "name": "Pizza Palace",
+    "type": "Bronze",
+    "logo": "/assets/images/sponsors/pizza-palace.png",
+    "website": "https://pizzapalace.example.com",
+    "description": "Local restaurant chain providing meals and catering for team events and competitions.",
+    "contribution": {
+      "monetary": 1500,
+      "inkind": ["Team Meals", "Event Catering", "Meeting Venue"]
+    },
+    "partnership_since": "2024",
+    "contact": {
+      "name": "Tony Marinelli",
+      "title": "Owner/Manager",
+      "email": "catering@pizzapalace.example.com",
+      "phone": "+1-555-0205"
+    },
+    "featured": false
+  },
+  {
+    "id": "sponsor007", 
+    "name": "Hardware & Tools Supply",
+    "type": "Bronze",
+    "logo": "/assets/images/sponsors/hts-logo.png",
+    "website": "https://hardwaretools.example.com",
+    "description": "Local hardware store providing tools, materials, and technical supplies for robot construction.",
+    "contribution": {
+      "monetary": 2000,
+      "inkind": ["Tools", "Hardware Supplies", "Material Discounts"]
+    },
+    "partnership_since": "2023", 
+    "contact": {
+      "name": "Frank Williams",
+      "title": "Store Manager",
+      "email": "wholesale@hardwaretools.example.com",
+      "phone": "+1-555-0206"
+    },
+    "featured": false
+  },
+  {
+    "id": "sponsor008",
+    "name": "Parent Teacher Association",
+    "type": "Community",
+    "logo": "/assets/images/sponsors/pta-logo.png",
+    "website": "https://alipta.example.com",
+    "description": "Ali Secondary School Parent Teacher Association supporting student extracurricular activities.",
+    "contribution": {
+      "monetary": 3000,
+      "inkind": ["Volunteer Coordination", "Fundraising Events", "Administrative Support"]
+    },
+    "partnership_since": "2021",
+    "contact": {
+      "name": "Patricia Johnson",
+      "title": "PTA President",
+      "email": "president@alipta.example.com", 
+      "phone": "+1-555-0207"
+    },
+    "featured": false
+  },
+  {
+    "id": "sponsor009",
+    "name": "Alumni Engineering Network",
+    "type": "Community",
+    "logo": "/assets/images/sponsors/aen-logo.png",
+    "website": "https://alialumni.example.com",
+    "description": "Network of Ali Secondary School alumni working in engineering and technology fields.",
+    "contribution": {
+      "monetary": 2500,
+      "inkind": ["Mentorship Programs", "Career Guidance", "Technical Expertise"]
+    },
+    "partnership_since": "2022",
+    "contact": {
+      "name": "Dr. Sarah Kim",
+      "title": "Network Coordinator",
+      "email": "mentorship@alialumni.example.com",
+      "phone": "+1-555-0208"
+    },
+    "featured": false
+  },
+  {
+    "id": "sponsor010",
+    "name": "Regional Electric Cooperative", 
+    "type": "Bronze",
+    "logo": "/assets/images/sponsors/rec-logo.png",
+    "website": "https://regionalelectric.example.com",
+    "description": "Local electric utility company supporting STEM education and renewable energy initiatives.",
+    "contribution": {
+      "monetary": 1800,
+      "inkind": ["Electrical Components", "Safety Training", "Energy Education"]
+    },
+    "partnership_since": "2024",
+    "contact": {
+      "name": "Michael Chang",
+      "title": "Community Programs Manager", 
+      "email": "education@regionalelectric.example.com",
+      "phone": "+1-555-0209"
+    },
+    "featured": false
+  }
+]

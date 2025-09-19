@@ -1,0 +1,246 @@
+{
+  "TeamMember": {
+    "type": "object",
+    "required": ["id", "name", "role", "status"],
+    "properties": {
+      "id": {"type": "string"},
+      "name": {"type": "string", "minLength": 2, "maxLength": 50},
+      "role": {"type": "string", "enum": ["Captain", "Co-Captain", "Lead Programmer", "Lead Builder", "Lead Designer", "Programmer", "Builder", "Designer", "Scout", "Driver", "Mentor", "Coach", "Alumni"]},
+      "status": {"type": "string", "enum": ["Active", "Alumni", "Mentor"]},
+      "grade": {"type": "integer", "minimum": 6, "maximum": 12},
+      "joinDate": {"type": "string", "format": "date"},
+      "bio": {"type": "string", "maxLength": 500},
+      "skills": {"type": "array", "items": {"type": "string"}},
+      "achievements": {"type": "array", "items": {"type": "string"}},
+      "avatar": {"type": "string", "format": "uri"},
+      "socialLinks": {
+        "type": "object",
+        "properties": {
+          "github": {"type": "string", "format": "uri"},
+          "linkedin": {"type": "string", "format": "uri"}
+        }
+      }
+    },
+    "example": {
+      "id": "tm001",
+      "name": "Ali Ahmed",
+      "role": "Captain",
+      "status": "Active",
+      "grade": 11,
+      "joinDate": "2023-09-01",
+      "bio": "Passionate about robotics and AI, leading our team to nationals.",
+      "skills": ["Java", "Python", "Mechanical Design", "Leadership"],
+      "achievements": ["Regional Champion 2024", "Innovation Award"],
+      "avatar": "/assets/team/ali-avatar.jpg",
+      "socialLinks": {
+        "github": "https://github.com/ali-ahmed"
+      }
+    }
+  },
+  "Project": {
+    "type": "object",
+    "required": ["id", "title", "status", "season"],
+    "properties": {
+      "id": {"type": "string"},
+      "title": {"type": "string", "minLength": 5, "maxLength": 100},
+      "description": {"type": "string", "maxLength": 1000},
+      "status": {"type": "string", "enum": ["Active", "Completed", "Archived"]},
+      "season": {"type": "string", "pattern": "^\\d{4}-\\d{4}$"},
+      "game": {"type": "string"},
+      "startDate": {"type": "string", "format": "date"},
+      "endDate": {"type": "string", "format": "date"},
+      "teamMembers": {"type": "array", "items": {"type": "string"}},
+      "technologies": {"type": "array", "items": {"type": "string"}},
+      "achievements": {"type": "array", "items": {"type": "string"}},
+      "media": {
+        "type": "object",
+        "properties": {
+          "images": {"type": "array", "items": {"type": "string", "format": "uri"}},
+          "videos": {"type": "array", "items": {"type": "string", "format": "uri"}},
+          "documentation": {"type": "string", "format": "uri"}
+        }
+      },
+      "repository": {"type": "string", "format": "uri"},
+      "weight": {"type": "number"},
+      "dimensions": {"type": "string"}
+    },
+    "example": {
+      "id": "proj001", 
+      "title": "Rapid React Robot 2024",
+      "description": "Our competition robot designed for the FRC Rapid React game, featuring autonomous ball collection and shooting mechanisms.",
+      "status": "Completed",
+      "season": "2023-2024",
+      "game": "FRC Rapid React",
+      "startDate": "2023-09-15",
+      "endDate": "2024-04-15",
+      "teamMembers": ["tm001", "tm002", "tm003"],
+      "technologies": ["Java", "WPILib", "CAD", "3D Printing"],
+      "achievements": ["Regional Finalist", "Engineering Excellence Award"],
+      "media": {
+        "images": ["/assets/projects/rapid-react-1.jpg", "/assets/projects/rapid-react-2.jpg"],
+        "videos": ["/assets/projects/rapid-react-demo.mp4"],
+        "documentation": "/assets/projects/rapid-react-docs.pdf"
+      },
+      "repository": "https://github.com/ali-robotics/rapid-react-2024",
+      "weight": 54.5,
+      "dimensions": "32\"L x 28\"W x 48\"H"
+    }
+  },
+  "Event": {
+    "type": "object",
+    "required": ["id", "title", "date", "type"],
+    "properties": {
+      "id": {"type": "string"},
+      "title": {"type": "string", "minLength": 5, "maxLength": 100},
+      "description": {"type": "string", "maxLength": 1000},
+      "type": {"type": "string", "enum": ["Competition", "Workshop", "Meeting", "Outreach", "Fundraising", "Social"]},
+      "date": {"type": "string", "format": "date-time"},
+      "endDate": {"type": "string", "format": "date-time"},
+      "location": {"type": "string"},
+      "venue": {"type": "string"},
+      "registrationRequired": {"type": "boolean"},
+      "registrationDeadline": {"type": "string", "format": "date"},
+      "maxParticipants": {"type": "integer"},
+      "cost": {"type": "number", "minimum": 0},
+      "organizer": {"type": "string"},
+      "contactEmail": {"type": "string", "format": "email"},
+      "tags": {"type": "array", "items": {"type": "string"}},
+      "featured": {"type": "boolean"},
+      "media": {
+        "type": "object",
+        "properties": {
+          "poster": {"type": "string", "format": "uri"},
+          "images": {"type": "array", "items": {"type": "string", "format": "uri"}}
+        }
+      }
+    },
+    "example": {
+      "id": "evt001",
+      "title": "FRC Regional Championship 2024",
+      "description": "Join us at the regional championship where we'll compete with our latest robot design.",
+      "type": "Competition",
+      "date": "2024-03-15T09:00:00Z",
+      "endDate": "2024-03-17T18:00:00Z", 
+      "location": "Dubai World Trade Centre",
+      "venue": "Hall 5",
+      "registrationRequired": true,
+      "registrationDeadline": "2024-02-15",
+      "maxParticipants": 50,
+      "cost": 0,
+      "organizer": "FIRST Robotics",
+      "contactEmail": "events@ali-robotics.school.ae",
+      "tags": ["FRC", "Competition", "Regional"],
+      "featured": true,
+      "media": {
+        "poster": "/assets/events/regional-2024-poster.jpg",
+        "images": ["/assets/events/regional-2024-1.jpg"]
+      }
+    }
+  },
+  "Sponsor": {
+    "type": "object",
+    "required": ["id", "name", "level"],
+    "properties": {
+      "id": {"type": "string"},
+      "name": {"type": "string", "minLength": 2, "maxLength": 100},
+      "level": {"type": "string", "enum": ["Title", "Platinum", "Gold", "Silver", "Bronze", "In-Kind"]},
+      "logo": {"type": "string", "format": "uri"},
+      "website": {"type": "string", "format": "uri"},
+      "description": {"type": "string", "maxLength": 500},
+      "contribution": {"type": "string"},
+      "since": {"type": "string", "format": "date"},
+      "contactPerson": {"type": "string"},
+      "contactEmail": {"type": "string", "format": "email"},
+      "active": {"type": "boolean"}
+    },
+    "example": {
+      "id": "sp001",
+      "name": "UAE Robotics Foundation",
+      "level": "Platinum",
+      "logo": "/assets/sponsors/uae-robotics-logo.png",
+      "website": "https://uae-robotics.org",
+      "description": "Supporting STEM education and robotics programs across the UAE.",
+      "contribution": "Robot components and workshop space",
+      "since": "2022-09-01",
+      "contactPerson": "Dr. Sara Al-Mansouri",
+      "contactEmail": "partnerships@uae-robotics.org",
+      "active": true
+    }
+  },
+  "BlogPost": {
+    "type": "object",
+    "required": ["id", "title", "content", "publishDate", "author"],
+    "properties": {
+      "id": {"type": "string"},
+      "title": {"type": "string", "minLength": 10, "maxLength": 100},
+      "slug": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+      "content": {"type": "string", "minLength": 100},
+      "excerpt": {"type": "string", "maxLength": 200},
+      "publishDate": {"type": "string", "format": "date-time"},
+      "lastModified": {"type": "string", "format": "date-time"},
+      "author": {"type": "string"},
+      "category": {"type": "string", "enum": ["Competition", "Project Update", "Team News", "Technical", "Outreach"]},
+      "tags": {"type": "array", "items": {"type": "string"}},
+      "featured": {"type": "boolean"},
+      "featuredImage": {"type": "string", "format": "uri"},
+      "published": {"type": "boolean"}
+    },
+    "example": {
+      "id": "blog001",
+      "title": "Our Journey to Regional Championship Success",
+      "slug": "regional-championship-success-2024",
+      "content": "After months of hard work and dedication, our team achieved remarkable success at the regional championship...",
+      "excerpt": "Read about our team's incredible journey and achievements at the recent regional robotics championship.",
+      "publishDate": "2024-03-20T10:00:00Z",
+      "author": "Ali Ahmed",
+      "category": "Competition",
+      "tags": ["FRC", "Championship", "Team Achievement"],
+      "featured": true,
+      "featuredImage": "/assets/blog/regional-success-2024.jpg",
+      "published": true
+    }
+  },
+  "GalleryItem": {
+    "type": "object", 
+    "required": ["id", "type", "url", "title"],
+    "properties": {
+      "id": {"type": "string"},
+      "type": {"type": "string", "enum": ["image", "video"]},
+      "url": {"type": "string", "format": "uri"},
+      "thumbnailUrl": {"type": "string", "format": "uri"},
+      "title": {"type": "string", "maxLength": 100},
+      "description": {"type": "string", "maxLength": 500},
+      "altText": {"type": "string", "maxLength": 200},
+      "uploadDate": {"type": "string", "format": "date-time"},
+      "tags": {"type": "array", "items": {"type": "string"}},
+      "event": {"type": "string"},
+      "photographer": {"type": "string"},
+      "featured": {"type": "boolean"},
+      "dimensions": {
+        "type": "object",
+        "properties": {
+          "width": {"type": "integer"},
+          "height": {"type": "integer"}
+        }
+      }
+    },
+    "example": {
+      "id": "media001",
+      "type": "image",
+      "url": "/assets/gallery/competition-2024-team.jpg",
+      "thumbnailUrl": "/assets/gallery/thumbs/competition-2024-team.jpg",
+      "title": "Team Photo at Regional Championship",
+      "description": "Our complete team celebrating after the regional championship competition in Dubai.",
+      "altText": "Ali Robotics team members posing with their robot at competition venue",
+      "uploadDate": "2024-03-17T15:30:00Z",
+      "tags": ["team", "competition", "regional"],
+      "event": "FRC Regional Championship 2024",
+      "photographer": "Sarah Khan",
+      "featured": true,
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      }
+    }
+  }
+}

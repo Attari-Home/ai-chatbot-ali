@@ -1,0 +1,88 @@
+/* Parental Consent Component Styles */
+
+.parental-consent-container {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Form styling improvements */
+.parental-consent-container form {
+  max-width: none;
+}
+
+.parental-consent-container input[type="checkbox"] {
+  transform: scale(1.1);
+}
+
+.parental-consent-container label {
+  user-select: none;
+}
+
+/* Custom focus styles for accessibility */
+.parental-consent-container input:focus,
+.parental-consent-container select:focus,
+.parental-consent-container textarea:focus {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* Required field indicator */
+.parental-consent-container label[for] {
+  position: relative;
+}
+
+.parental-consent-container label[for]:has(+ input[required])::after,
+.parental-consent-container label[for]:has(+ select[required])::after {
+  content: '*';
+  color: #DC2626;
+  margin-left: 2px;
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Print styles for form */
+@media print {
+  .parental-consent-container {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+  
+  .parental-consent-container button {
+    display: none;
+  }
+  
+  .parental-consent-container .bg-blue-50,
+  .parental-consent-container .bg-white,
+  .parental-consent-container .bg-gray-50 {
+    background: white !important;
+    border: 1px solid #000 !important;
+  }
+  
+  .parental-consent-container input,
+  .parental-consent-container select {
+    border: 1px solid #000 !important;
+    background: white !important;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .parental-consent-container {
+    padding: 1rem;
+  }
+  
+  .parental-consent-container .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .parental-consent-container .flex-wrap {
+    flex-direction: column;
+  }
+}

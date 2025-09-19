@@ -1,0 +1,36 @@
+/* Privacy Policy Component Styles */
+
+.privacy-policy-container {
+  line-height: 1.6;
+}
+
+.privacy-policy-container h2 {
+  scroll-margin-top: 1rem;
+}
+
+.privacy-policy-container section {
+  scroll-margin-top: 2rem;
+}
+
+/* Print styles */
+@media print {
+  .privacy-policy-container {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  
+  .privacy-policy-container button,
+  .privacy-policy-container a[href^="/"]:not([href*="mailto:"]) {
+    display: none;
+  }
+  
+  .privacy-policy-container .bg-blue-50,
+  .privacy-policy-container .bg-gray-50,
+  .privacy-policy-container .bg-yellow-50,
+  .privacy-policy-container .bg-green-50,
+  .privacy-policy-container .bg-red-50,
+  .privacy-policy-container .bg-gray-100 {
+    background: #f9f9f9 !important;
+    border: 1px solid #ddd !important;
+  }
+}

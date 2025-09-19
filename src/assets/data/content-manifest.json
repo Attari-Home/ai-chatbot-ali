@@ -1,0 +1,69 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-15T10:30:00Z",
+  "description": "Content manifest for Ali Robotics Team website",
+  "contentTypes": {
+    "teamMembers": {
+      "file": "team-members.json",
+      "count": 10,
+      "lastModified": "2024-01-15T09:15:00Z",
+      "schema": "team-member-schema.json",
+      "description": "Team member profiles with roles, skills, and achievements"
+    },
+    "projects": {
+      "file": "projects.json", 
+      "count": 5,
+      "lastModified": "2024-01-15T09:20:00Z",
+      "schema": "project-schema.json",
+      "description": "Robotics projects and competitions"
+    },
+    "events": {
+      "file": "events.json",
+      "count": 6,
+      "lastModified": "2024-01-15T09:25:00Z", 
+      "schema": "event-schema.json",
+      "description": "Upcoming and past team events"
+    },
+    "news": {
+      "file": "news.json",
+      "count": 5,
+      "lastModified": "2024-01-15T09:30:00Z",
+      "schema": "news-schema.json", 
+      "description": "Team news articles and announcements"
+    },
+    "blogPosts": {
+      "file": "blog-posts.json",
+      "count": 3,
+      "lastModified": "2024-01-15T10:00:00Z",
+      "schema": "blog-post-schema.json",
+      "description": "In-depth blog posts and technical articles"
+    },
+    "sponsors": {
+      "file": "sponsors.json",
+      "count": 10, 
+      "lastModified": "2024-01-15T09:35:00Z",
+      "schema": "sponsor-schema.json",
+      "description": "Team sponsors and community partners"
+    }
+  },
+  "totalRecords": 39,
+  "dataIntegrity": {
+    "checksumType": "SHA-256",
+    "lastValidated": "2024-01-15T10:30:00Z",
+    "validationStatus": "passed"
+  },
+  "contentGuidelines": {
+    "imageFormats": ["jpg", "png", "webp"],
+    "maxImageSize": "2MB", 
+    "textEncoding": "UTF-8",
+    "dateFormat": "ISO 8601",
+    "requiredFields": ["id", "title/name", "description"],
+    "multilingual": ["en", "ur", "pa"]
+  },
+  "updateSchedule": {
+    "frequency": "weekly",
+    "lastUpdate": "2024-01-15T10:30:00Z",
+    "nextUpdate": "2024-01-22T10:30:00Z",
+    "maintainer": "content@alirobotics.edu"
+  }
+}

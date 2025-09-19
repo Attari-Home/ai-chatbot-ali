@@ -1,0 +1,140 @@
+[
+  {
+    "id": "tm001",
+    "name": "Ali Ahmed",
+    "role": "Captain",
+    "status": "Active",
+    "grade": 11,
+    "joinDate": "2023-09-01",
+    "bio": "Passionate about robotics and AI, leading our team to nationals with innovative designs and strong leadership.",
+    "skills": ["Java", "Python", "Mechanical Design", "Leadership", "CAD"],
+    "achievements": ["Regional Champion 2024", "Innovation Award", "Dean's List Award"],
+    "avatar": "/assets/images/team/ali-avatar.jpg",
+    "socialLinks": {
+      "github": "https://github.com/ali-ahmed"
+    }
+  },
+  {
+    "id": "tm002", 
+    "name": "Sara Khan",
+    "role": "Lead Programmer",
+    "status": "Active",
+    "grade": 10,
+    "joinDate": "2023-09-01",
+    "bio": "Expert in autonomous programming and vision systems, developing cutting-edge solutions for competition challenges.",
+    "skills": ["Java", "Python", "Computer Vision", "Machine Learning", "Git"],
+    "achievements": ["Programming Excellence Award", "Autonomous Challenge Winner"],
+    "avatar": "/assets/images/team/sara-avatar.jpg",
+    "socialLinks": {
+      "github": "https://github.com/sara-khan"
+    }
+  },
+  {
+    "id": "tm003",
+    "name": "Omar Al-Rashid", 
+    "role": "Lead Builder",
+    "status": "Active",
+    "grade": 12,
+    "joinDate": "2022-09-01",
+    "bio": "Mechanical engineering enthusiast specializing in robot design and manufacturing with precision and creativity.",
+    "skills": ["Mechanical Design", "3D Printing", "CNC", "Welding", "Project Management"],
+    "achievements": ["Best Robot Design 2024", "Craftsmanship Award"],
+    "avatar": "/assets/images/team/omar-avatar.jpg",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/omar-alrashid"
+    }
+  },
+  {
+    "id": "tm004",
+    "name": "Zara Shah",
+    "role": "Lead Designer",
+    "status": "Active", 
+    "grade": 9,
+    "joinDate": "2024-01-15",
+    "bio": "Creative designer focused on user experience and visual communication, bringing artistic vision to technical solutions.",
+    "skills": ["UI/UX Design", "Graphic Design", "Prototyping", "Brand Identity"],
+    "achievements": ["Best Team Branding 2024", "Rising Star Award"],
+    "avatar": "/assets/images/team/zara-avatar.jpg",
+    "socialLinks": {
+      "behance": "https://behance.net/zara-shah"
+    }
+  },
+  {
+    "id": "tm005",
+    "name": "Hassan Malik",
+    "role": "Programmer",
+    "status": "Active",
+    "grade": 11,
+    "joinDate": "2023-09-01", 
+    "bio": "Backend systems specialist working on robot control systems and data analysis for performance optimization.",
+    "skills": ["Java", "C++", "Data Analysis", "System Architecture"],
+    "achievements": ["Code Quality Award"],
+    "avatar": "/assets/images/team/hassan-avatar.jpg"
+  },
+  {
+    "id": "tm006",
+    "name": "Layla Ibrahim",
+    "role": "Builder",
+    "status": "Active",
+    "grade": 10,
+    "joinDate": "2023-09-01",
+    "bio": "Precision builder with expertise in electrical systems and component integration for reliable robot performance.",
+    "skills": ["Electronics", "Wiring", "Soldering", "Quality Control"],
+    "achievements": ["Best Electrical Integration 2024"],
+    "avatar": "/assets/images/team/layla-avatar.jpg"
+  },
+  {
+    "id": "tm007",
+    "name": "Ahmed Al-Mansoori",
+    "role": "Scout",
+    "status": "Active",
+    "grade": 12,
+    "joinDate": "2022-09-01",
+    "bio": "Strategic analyst and competition scout, providing crucial intelligence and match strategy for tournament success.",
+    "skills": ["Data Analysis", "Strategy", "Communication", "Research"],
+    "achievements": ["Best Scouting Strategy 2024", "Team Spirit Award"],
+    "avatar": "/assets/images/team/ahmed-avatar.jpg"
+  },
+  {
+    "id": "tm008",
+    "name": "Fatima Al-Zahra",
+    "role": "Driver",
+    "status": "Active",
+    "grade": 11,
+    "joinDate": "2023-01-15",
+    "bio": "Skilled robot operator with exceptional hand-eye coordination and strategic thinking during intense competitions.",
+    "skills": ["Robot Operation", "Quick Thinking", "Pressure Management", "Team Coordination"],
+    "achievements": ["Best Driver Award 2024", "Clutch Performance Recognition"],
+    "avatar": "/assets/images/team/fatima-avatar.jpg"
+  },
+  {
+    "id": "tm009",
+    "name": "Dr. Khalid Rahman",
+    "role": "Mentor",
+    "status": "Mentor",
+    "grade": null,
+    "joinDate": "2022-08-01",
+    "bio": "Computer Science professor and robotics expert, guiding students in technical excellence and professional development.",
+    "skills": ["Robotics", "AI", "Mentoring", "Research", "Academic Leadership"],
+    "achievements": ["Mentor of the Year 2024", "STEM Education Excellence"],
+    "avatar": "/assets/images/team/khalid-avatar.jpg",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/dr-khalid-rahman"
+    }
+  },
+  {
+    "id": "tm010",
+    "name": "Eng. Mariam Al-Qasimi",
+    "role": "Coach",
+    "status": "Mentor", 
+    "grade": null,
+    "joinDate": "2022-08-01",
+    "bio": "Mechanical Engineer and former FRC competitor, bringing real-world experience and competitive insight to the team.",
+    "skills": ["Mechanical Engineering", "Project Management", "Competition Strategy", "Student Development"],
+    "achievements": ["Coach Excellence Award", "Regional Impact Award"],
+    "avatar": "/assets/images/team/mariam-avatar.jpg",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/mariam-alqasimi"
+    }
+  }
+]

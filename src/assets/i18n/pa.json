@@ -1,0 +1,49 @@
+{
+  "navigation": {
+    "home": "گھر",
+    "about": "ساڈے بارے",
+    "team": "ٹیم",
+    "projects": "منصوبے", 
+    "events": "تقریبات",
+    "gallery": "تصاویر",
+    "blog": "بلاگ",
+    "sponsors": "حامی",
+    "join": "شامل ہوو",
+    "contact": "رابطہ"
+  },
+  "home": {
+    "heroTitle": "علی روبوٹکس ٹیم",
+    "heroSubtitle": "مستقبل بناؤنا، اک روبوٹ نال",
+    "heroDescription": "اساں علی سکول دے پرجوش ودیارتھیاں دا گروپ آں جو مقابلہ بازی روبوٹکس راہیں STEM تعلیم لئی وقف آں۔",
+    "heroCtaPrimary": "ساڈی ٹیم نال ملو",
+    "heroCtaSecondary": "منصوبے ویکھو",
+    "latestNewsTitle": "تازہ خبراں",
+    "upcomingEventsTitle": "آؤن والیاں تقریبات"
+  },
+  "contact": {
+    "title": "ساڈے نال رابطہ کرو",
+    "description": "ساڈی ٹیم نال رابطہ کرو",
+    "form": {
+      "name": "پورا ناں",
+      "namePlaceholder": "اپنا پورا ناں لکھو",
+      "email": "ای میل پتہ",
+      "emailPlaceholder": "اپنا ای میل لکھو",
+      "subject": "موضوع", 
+      "subjectPlaceholder": "ایہ کی بارے آ؟",
+      "message": "پیغام",
+      "messagePlaceholder": "ایتھے اپنا پیغام لکھو...",
+      "parentConsent": "میں 18 سال توں گھٹ آں تے والدین دی اجازت آ",
+      "privacyConsent": "میں رازداری دی پالیسی نال متفق آں",
+      "submit": "پیغام بھیجو",
+      "success": "پیغام کامیابی نال بھیجیا گیا!",
+      "error": "پیغام بھیجن وچ ناکام۔ دوبارہ کوشش کرو۔"
+    }
+  },
+  "footer": {
+    "description": "علی روبوٹکس ٹیم - انجینئراں تے ایجادکاراں دی اگلی نسل نوں متاثر کرنا۔",
+    "quickLinks": "فوری لنک",
+    "contact": "رابطے دی معلومات",
+    "followUs": "ساڈا پیروی کرو",
+    "copyright": "© 2024 علی روبوٹکس ٹیم۔ سارے حق محفوظ نیں۔"
+  }
+}

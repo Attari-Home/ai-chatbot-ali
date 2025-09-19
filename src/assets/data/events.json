@@ -1,0 +1,203 @@
+[
+  {
+    "id": "evt001",
+    "title": "Regional Championship 2024",
+    "description": "Join us at the FRC Regional Championship where our team will compete against top robotics teams from across the region. Witness cutting-edge engineering and programming in action!",
+    "type": "Competition",
+    "startDate": "2024-03-15T09:00:00Z",
+    "endDate": "2024-03-17T18:00:00Z",
+    "location": {
+      "name": "Regional Convention Center",
+      "address": "123 Convention Ave, Regional City, RC 12345",
+      "coordinates": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      }
+    },
+    "isPublic": true,
+    "registrationRequired": false,
+    "cost": "Free",
+    "maxAttendees": 2000,
+    "organizer": "FIRST Robotics Competition",
+    "contact": {
+      "email": "events@alirobotics.edu",
+      "phone": "+1-555-0123"
+    },
+    "tags": ["FRC", "Competition", "Regional", "Championship"],
+    "featured": true,
+    "media": {
+      "image": "/assets/images/events/regional-championship.jpg",
+      "gallery": [
+        "/assets/images/events/regional-1.jpg",
+        "/assets/images/events/regional-2.jpg"
+      ]
+    }
+  },
+  {
+    "id": "evt002",
+    "title": "STEM Night Community Showcase",
+    "description": "Community showcase event where our team demonstrates robotics technology to local families and students. Interactive displays, robot demonstrations, and hands-on activities for all ages.",
+    "type": "Outreach",
+    "startDate": "2024-02-20T18:00:00Z",
+    "endDate": "2024-02-20T21:00:00Z",
+    "location": {
+      "name": "Ali Secondary School Gymnasium",
+      "address": "456 School Lane, Educational District, ED 67890",
+      "coordinates": {
+        "lat": 40.7589,
+        "lng": -73.9851
+      }
+    },
+    "isPublic": true,
+    "registrationRequired": false,
+    "cost": "Free",
+    "maxAttendees": 300,
+    "organizer": "Ali Robotics Team",
+    "contact": {
+      "email": "outreach@alirobotics.edu",
+      "phone": "+1-555-0124"
+    },
+    "tags": ["STEM", "Community", "Outreach", "Family"],
+    "featured": true,
+    "media": {
+      "image": "/assets/images/events/stem-night.jpg",
+      "gallery": [
+        "/assets/images/events/stem-1.jpg",
+        "/assets/images/events/stem-2.jpg"
+      ]
+    }
+  },
+  {
+    "id": "evt003",
+    "title": "Weekly Team Meeting",
+    "description": "Regular team meeting for project updates, design reviews, and planning sessions. All team members and interested students welcome to attend.",
+    "type": "Meeting",
+    "startDate": "2024-01-16T15:30:00Z",
+    "endDate": "2024-01-16T17:30:00Z",
+    "location": {
+      "name": "Robotics Lab - Room 203",
+      "address": "Ali Secondary School, 456 School Lane, Educational District, ED 67890",
+      "coordinates": {
+        "lat": 40.7589,
+        "lng": -73.9851
+      }
+    },
+    "isPublic": false,
+    "registrationRequired": false,
+    "cost": "Free",
+    "maxAttendees": 30,
+    "organizer": "Ali Robotics Team",
+    "contact": {
+      "email": "meetings@alirobotics.edu",
+      "phone": "+1-555-0125"
+    },
+    "tags": ["Team", "Meeting", "Planning", "Internal"],
+    "featured": false,
+    "recurring": {
+      "frequency": "Weekly",
+      "daysOfWeek": ["Tuesday"],
+      "endDate": "2024-06-15T17:30:00Z"
+    },
+    "media": {
+      "image": "/assets/images/events/team-meeting.jpg"
+    }
+  },
+  {
+    "id": "evt004",
+    "title": "Build Season Kickoff",
+    "description": "Official start of the 2024 FRC build season! Game reveal, strategy planning, and initial design brainstorming. Historic moment as we begin our championship journey.",
+    "type": "Meeting",
+    "startDate": "2024-01-06T10:00:00Z",
+    "endDate": "2024-01-06T16:00:00Z",
+    "location": {
+      "name": "Robotics Lab - Room 203",
+      "address": "Ali Secondary School, 456 School Lane, Educational District, ED 67890",
+      "coordinates": {
+        "lat": 40.7589,
+        "lng": -73.9851
+      }
+    },
+    "isPublic": false,
+    "registrationRequired": false,
+    "cost": "Free",
+    "maxAttendees": 25,
+    "organizer": "Ali Robotics Team",
+    "contact": {
+      "email": "buildseason@alirobotics.edu",
+      "phone": "+1-555-0126"
+    },
+    "tags": ["Build Season", "FRC", "Kickoff", "Strategy"],
+    "featured": true,
+    "media": {
+      "image": "/assets/images/events/build-kickoff.jpg",
+      "gallery": [
+        "/assets/images/events/kickoff-1.jpg",
+        "/assets/images/events/kickoff-2.jpg"
+      ]
+    }
+  },
+  {
+    "id": "evt005",
+    "title": "FIRST Lego League Qualifier",
+    "description": "Regional qualifier tournament for our FIRST Lego League teams. Young engineers showcase their innovative solutions and core values in friendly competition.",
+    "type": "Competition",
+    "startDate": "2024-02-10T08:00:00Z",
+    "endDate": "2024-02-10T17:00:00Z",
+    "location": {
+      "name": "District Middle School",
+      "address": "789 Learning Blvd, Educational District, ED 67891",
+      "coordinates": {
+        "lat": 40.7505,
+        "lng": -73.9934
+      }
+    },
+    "isPublic": true,
+    "registrationRequired": true,
+    "cost": "$25 per team",
+    "maxAttendees": 150,
+    "organizer": "FIRST Lego League Regional",
+    "contact": {
+      "email": "fll@alirobotics.edu",
+      "phone": "+1-555-0127"
+    },
+    "tags": ["FLL", "Competition", "Qualifier", "Youth"],
+    "featured": false,
+    "media": {
+      "image": "/assets/images/events/fll-qualifier.jpg",
+      "gallery": [
+        "/assets/images/events/fll-1.jpg",
+        "/assets/images/events/fll-2.jpg"
+      ]
+    }
+  },
+  {
+    "id": "evt006",
+    "title": "Alumni Mentorship Workshop",
+    "description": "Special workshop featuring our graduated team members sharing industry insights, career paths, and advanced technical skills with current team members.",
+    "type": "Workshop",
+    "startDate": "2024-03-01T14:00:00Z",
+    "endDate": "2024-03-01T17:00:00Z",
+    "location": {
+      "name": "School Auditorium",
+      "address": "Ali Secondary School, 456 School Lane, Educational District, ED 67890",
+      "coordinates": {
+        "lat": 40.7589,
+        "lng": -73.9851
+      }
+    },
+    "isPublic": false,
+    "registrationRequired": true,
+    "cost": "Free",
+    "maxAttendees": 50,
+    "organizer": "Ali Robotics Alumni Network",
+    "contact": {
+      "email": "alumni@alirobotics.edu",
+      "phone": "+1-555-0128"
+    },
+    "tags": ["Alumni", "Mentorship", "Workshop", "Career"],
+    "featured": true,
+    "media": {
+      "image": "/assets/images/events/alumni-workshop.jpg"
+    }
+  }
+]

@@ -1,0 +1,147 @@
+[
+  {
+    "id": "proj001",
+    "title": "Rapid React Robot 2024",
+    "description": "Our championship-winning robot designed for the FRC Rapid React game, featuring autonomous ball collection, precision shooting mechanisms, and innovative climbing system. This robot showcased our team's engineering excellence and competitive spirit.",
+    "status": "Completed",
+    "season": "2023-2024", 
+    "game": "FRC Rapid React",
+    "startDate": "2023-09-15",
+    "endDate": "2024-04-15",
+    "teamMembers": ["tm001", "tm002", "tm003", "tm005", "tm006"],
+    "technologies": ["Java", "WPILib", "CAD", "3D Printing", "CNC Machining", "Computer Vision"],
+    "achievements": [
+      "Regional Champion 2024",
+      "Innovation Award",
+      "Engineering Excellence Award",
+      "Best Robot Design"
+    ],
+    "media": {
+      "images": [
+        "/assets/images/projects/rapid-react-1.jpg",
+        "/assets/images/projects/rapid-react-2.jpg", 
+        "/assets/images/projects/rapid-react-3.jpg"
+      ],
+      "videos": ["/assets/videos/projects/rapid-react-demo.mp4"],
+      "documentation": "/assets/docs/rapid-react-technical-docs.pdf"
+    },
+    "repository": "https://github.com/ali-robotics/rapid-react-2024",
+    "weight": 54.5,
+    "dimensions": "32\"L x 28\"W x 48\"H",
+    "featured": true
+  },
+  {
+    "id": "proj002", 
+    "title": "Infinite Recharge Robot 2023",
+    "description": "High-performance robot built for the FRC Infinite Recharge game, featuring advanced autonomous navigation, power cell manipulation, and climbing capabilities. A testament to our growing technical expertise.",
+    "status": "Completed",
+    "season": "2022-2023",
+    "game": "FRC Infinite Recharge",
+    "startDate": "2022-09-10", 
+    "endDate": "2023-04-10",
+    "teamMembers": ["tm001", "tm003", "tm007", "tm009"],
+    "technologies": ["Java", "WPILib", "Pneumatics", "Sensors", "Vision Processing"],
+    "achievements": [
+      "Regional Finalist",
+      "Rookie Inspiration Award",
+      "Safety Award"
+    ],
+    "media": {
+      "images": [
+        "/assets/images/projects/infinite-recharge-1.jpg",
+        "/assets/images/projects/infinite-recharge-2.jpg"
+      ],
+      "videos": ["/assets/videos/projects/infinite-recharge-demo.mp4"],
+      "documentation": "/assets/docs/infinite-recharge-build-log.pdf"
+    },
+    "repository": "https://github.com/ali-robotics/infinite-recharge-2023",
+    "weight": 52.3,
+    "dimensions": "30\"L x 26\"W x 45\"H",
+    "featured": false
+  },
+  {
+    "id": "proj003",
+    "title": "FIRST Lego League Robot",
+    "description": "Educational robotics project introducing younger students to programming and mechanical design principles through FIRST Lego League challenges. Perfect stepping stone to FRC competition.",
+    "status": "Active",
+    "season": "2024-2025",
+    "game": "FIRST Lego League Challenge",
+    "startDate": "2024-01-15",
+    "endDate": "2024-12-15",
+    "teamMembers": ["tm004", "tm005", "tm006", "tm008"],
+    "technologies": ["EV3 Programming", "LEGO Mindstorms", "Sensors", "Basic Programming"],
+    "achievements": [
+      "Regional Qualifier",
+      "Core Values Award"
+    ],
+    "media": {
+      "images": [
+        "/assets/images/projects/fll-robot-1.jpg",
+        "/assets/images/projects/fll-robot-2.jpg"
+      ],
+      "videos": ["/assets/videos/projects/fll-demo.mp4"],
+      "documentation": "/assets/docs/fll-project-guide.pdf"
+    },
+    "repository": "https://github.com/ali-robotics/fll-2024",
+    "weight": 2.1,
+    "dimensions": "18\"L x 12\"W x 8\"H",
+    "featured": false
+  },
+  {
+    "id": "proj004",
+    "title": "Autonomous Navigation System",
+    "description": "Research and development project focusing on advanced autonomous navigation using computer vision, LIDAR, and machine learning algorithms. Preparing for future competition challenges.",
+    "status": "Active", 
+    "season": "2024-2025",
+    "game": "Research Project",
+    "startDate": "2024-02-01",
+    "endDate": "2024-11-30",
+    "teamMembers": ["tm002", "tm005", "tm009"],
+    "technologies": ["Python", "OpenCV", "TensorFlow", "ROS", "LIDAR", "IMU"],
+    "achievements": [
+      "Science Fair Winner",
+      "Innovation Recognition"
+    ],
+    "media": {
+      "images": [
+        "/assets/images/projects/autonomous-nav-1.jpg",
+        "/assets/images/projects/autonomous-nav-2.jpg"
+      ],
+      "videos": ["/assets/videos/projects/autonomous-demo.mp4"],
+      "documentation": "/assets/docs/autonomous-research-paper.pdf"
+    },
+    "repository": "https://github.com/ali-robotics/autonomous-navigation",
+    "weight": null,
+    "dimensions": "Variable",
+    "featured": true
+  },
+  {
+    "id": "proj005",
+    "title": "Community Outreach Robot",
+    "description": "Interactive demonstration robot designed for community events and school visits. Features LED displays, sound effects, and remote control for engaging educational presentations.",
+    "status": "Completed",
+    "season": "2023-2024",
+    "game": "Outreach Project", 
+    "startDate": "2023-11-01",
+    "endDate": "2024-02-28",
+    "teamMembers": ["tm004", "tm006", "tm007", "tm008"],
+    "technologies": ["Arduino", "LED Strips", "Sound Modules", "RC Control", "3D Printing"],
+    "achievements": [
+      "Community Impact Award",
+      "Best Outreach Project",
+      "Student Choice Award"
+    ],
+    "media": {
+      "images": [
+        "/assets/images/projects/outreach-robot-1.jpg",
+        "/assets/images/projects/outreach-robot-2.jpg"
+      ],
+      "videos": ["/assets/videos/projects/outreach-demo.mp4"],
+      "documentation": "/assets/docs/outreach-robot-manual.pdf"
+    },
+    "repository": "https://github.com/ali-robotics/outreach-robot",
+    "weight": 15.2,
+    "dimensions": "24\"L x 18\"W x 20\"H",
+    "featured": false
+  }
+]

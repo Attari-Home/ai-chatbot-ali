@@ -1,0 +1,230 @@
+ali-robotics/
+├── README.md
+├── package.json
+├── angular.json
+├── tsconfig.json
+├── tsconfig.app.json
+├── tsconfig.spec.json
+├── tailwind.config.js
+├── postcss.config.js
+├── .eslintrc.json
+├── .prettierrc
+├── .gitignore
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── Dockerfile
+├── src/
+│   ├── main.ts
+│   ├── styles.css
+│   ├── index.html
+│   ├── favicon.ico
+│   ├── app/
+│   │   ├── app.component.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.css
+│   │   ├── app.component.spec.ts
+│   │   ├── app.config.ts
+│   │   ├── app.routes.ts
+│   │   ├── core/
+│   │   │   ├── services/
+│   │   │   │   ├── contact.service.ts
+│   │   │   │   ├── content.service.ts
+│   │   │   │   ├── meta.service.ts
+│   │   │   │   └── sitemap.service.ts
+│   │   │   ├── guards/
+│   │   │   │   └── can-activate.guard.ts
+│   │   │   ├── interceptors/
+│   │   │   │   └── http-error.interceptor.ts
+│   │   │   └── models/
+│   │   │       ├── team-member.model.ts
+│   │   │       ├── project.model.ts
+│   │   │       ├── event.model.ts
+│   │   │       ├── blog-post.model.ts
+│   │   │       └── sponsor.model.ts
+│   │   ├── shared/
+│   │   │   ├── components/
+│   │   │   │   ├── header/
+│   │   │   │   │   ├── header.component.ts
+│   │   │   │   │   ├── header.component.html
+│   │   │   │   │   └── header.component.css
+│   │   │   │   ├── footer/
+│   │   │   │   │   ├── footer.component.ts
+│   │   │   │   │   ├── footer.component.html
+│   │   │   │   │   └── footer.component.css
+│   │   │   │   ├── hero/
+│   │   │   │   │   ├── hero.component.ts
+│   │   │   │   │   ├── hero.component.html
+│   │   │   │   │   └── hero.component.css
+│   │   │   │   ├── team-card/
+│   │   │   │   │   ├── team-card.component.ts
+│   │   │   │   │   ├── team-card.component.html
+│   │   │   │   │   └── team-card.component.css
+│   │   │   │   ├── event-card/
+│   │   │   │   │   ├── event-card.component.ts
+│   │   │   │   │   ├── event-card.component.html
+│   │   │   │   │   └── event-card.component.css
+│   │   │   │   ├── project-card/
+│   │   │   │   │   ├── project-card.component.ts
+│   │   │   │   │   ├── project-card.component.html
+│   │   │   │   │   └── project-card.component.css
+│   │   │   │   ├── gallery-grid/
+│   │   │   │   │   ├── gallery-grid.component.ts
+│   │   │   │   │   ├── gallery-grid.component.html
+│   │   │   │   │   └── gallery-grid.component.css
+│   │   │   │   ├── lightbox/
+│   │   │   │   │   ├── lightbox.component.ts
+│   │   │   │   │   ├── lightbox.component.html
+│   │   │   │   │   └── lightbox.component.css
+│   │   │   │   ├── contact-form/
+│   │   │   │   │   ├── contact-form.component.ts
+│   │   │   │   │   ├── contact-form.component.html
+│   │   │   │   │   └── contact-form.component.css
+│   │   │   │   ├── newsletter-signup/
+│   │   │   │   │   ├── newsletter-signup.component.ts
+│   │   │   │   │   ├── newsletter-signup.component.html
+│   │   │   │   │   └── newsletter-signup.component.css
+│   │   │   │   └── ui/
+│   │   │   │       ├── button/
+│   │   │   │       │   ├── button.component.ts
+│   │   │   │       │   ├── button.component.html
+│   │   │   │       │   └── button.component.css
+│   │   │   │       ├── card/
+│   │   │   │       │   ├── card.component.ts
+│   │   │   │       │   ├── card.component.html
+│   │   │   │       │   └── card.component.css
+│   │   │   │       ├── modal/
+│   │   │   │       │   ├── modal.component.ts
+│   │   │   │       │   ├── modal.component.html
+│   │   │   │       │   └── modal.component.css
+│   │   │   │       └── loading-spinner/
+│   │   │   │           ├── loading-spinner.component.ts
+│   │   │   │           ├── loading-spinner.component.html
+│   │   │   │           └── loading-spinner.component.css
+│   │   │   ├── pipes/
+│   │   │   │   ├── truncate.pipe.ts
+│   │   │   │   └── safe-html.pipe.ts
+│   │   │   └── directives/
+│   │   │       ├── lazy-load.directive.ts
+│   │   │       └── click-outside.directive.ts
+│   │   ├── features/
+│   │   │   ├── home/
+│   │   │   │   ├── home.component.ts
+│   │   │   │   ├── home.component.html
+│   │   │   │   ├── home.component.css
+│   │   │   │   └── home.component.spec.ts
+│   │   │   ├── about/
+│   │   │   │   ├── about.component.ts
+│   │   │   │   ├── about.component.html
+│   │   │   │   ├── about.component.css
+│   │   │   │   └── about.component.spec.ts
+│   │   │   ├── team/
+│   │   │   │   ├── team.component.ts
+│   │   │   │   ├── team.component.html
+│   │   │   │   ├── team.component.css
+│   │   │   │   ├── team.component.spec.ts
+│   │   │   │   ├── team-detail/
+│   │   │   │   │   ├── team-detail.component.ts
+│   │   │   │   │   ├── team-detail.component.html
+│   │   │   │   │   ├── team-detail.component.css
+│   │   │   │   │   └── team-detail.component.spec.ts
+│   │   │   ├── projects/
+│   │   │   │   ├── projects.component.ts
+│   │   │   │   ├── projects.component.html
+│   │   │   │   ├── projects.component.css
+│   │   │   │   ├── projects.component.spec.ts
+│   │   │   │   ├── project-detail/
+│   │   │   │   │   ├── project-detail.component.ts
+│   │   │   │   │   ├── project-detail.component.html
+│   │   │   │   │   ├── project-detail.component.css
+│   │   │   │   │   └── project-detail.component.spec.ts
+│   │   │   ├── events/
+│   │   │   │   ├── events.component.ts
+│   │   │   │   ├── events.component.html
+│   │   │   │   ├── events.component.css
+│   │   │   │   ├── events.component.spec.ts
+│   │   │   │   ├── event-detail/
+│   │   │   │   │   ├── event-detail.component.ts
+│   │   │   │   │   ├── event-detail.component.html
+│   │   │   │   │   ├── event-detail.component.css
+│   │   │   │   │   └── event-detail.component.spec.ts
+│   │   │   ├── gallery/
+│   │   │   │   ├── gallery.component.ts
+│   │   │   │   ├── gallery.component.html
+│   │   │   │   ├── gallery.component.css
+│   │   │   │   └── gallery.component.spec.ts
+│   │   │   ├── blog/
+│   │   │   │   ├── blog.component.ts
+│   │   │   │   ├── blog.component.html
+│   │   │   │   ├── blog.component.css
+│   │   │   │   ├── blog.component.spec.ts
+│   │   │   │   ├── blog-detail/
+│   │   │   │   │   ├── blog-detail.component.ts
+│   │   │   │   │   ├── blog-detail.component.html
+│   │   │   │   │   ├── blog-detail.component.css
+│   │   │   │   │   └── blog-detail.component.spec.ts
+│   │   │   ├── contact/
+│   │   │   │   ├── contact.component.ts
+│   │   │   │   ├── contact.component.html
+│   │   │   │   ├── contact.component.css
+│   │   │   │   └── contact.component.spec.ts
+│   │   │   └── not-found/
+│   │   │       ├── not-found.component.ts
+│   │   │       ├── not-found.component.html
+│   │   │       ├── not-found.component.css
+│   │   │       └── not-found.component.spec.ts
+│   │   └── layouts/
+│   │       ├── main-layout/
+│   │       │   ├── main-layout.component.ts
+│   │       │   ├── main-layout.component.html
+│   │       │   └── main-layout.component.css
+│   │       └── admin-layout/
+│   │           ├── admin-layout.component.ts
+│   │           ├── admin-layout.component.html
+│   │           └── admin-layout.component.css
+│   ├── assets/
+│   │   ├── images/
+│   │   │   ├── logo.svg
+│   │   │   ├── hero-bg.jpg
+│   │   │   ├── team/
+│   │   │   │   └── placeholder-avatar.jpg
+│   │   │   ├── projects/
+│   │   │   │   └── robot-placeholder.jpg
+│   │   │   ├── events/
+│   │   │   │   └── competition-placeholder.jpg
+│   │   │   └── gallery/
+│   │   │       └── gallery-placeholder.jpg
+│   │   ├── icons/
+│   │   │   └── favicon.ico
+│   │   ├── i18n/
+│   │   │   ├── en.json
+│   │   │   ├── ur.json
+│   │   │   └── pa.json
+│   │   └── data/
+│   │       ├── team-members.json
+│   │       ├── projects.json
+│   │       ├── events.json
+│   │       ├── blog-posts.json
+│   │       └── sponsors.json
+│   └── environments/
+│       ├── environment.ts
+│       └── environment.prod.ts
+├── content/
+│   ├── blog/
+│   │   ├── 2024-03-20-regional-championship-success.md
+│   │   ├── 2024-02-15-robot-design-process.md
+│   │   └── 2024-01-10-team-expansion.md
+│   ├── projects/
+│   │   ├── rapid-react-2024.md
+│   │   ├── infinite-recharge-2023.md
+│   │   └── first-lego-league.md
+│   └── pages/
+│       ├── about.md
+│       ├── privacy-policy.md
+│       └── terms-of-service.md
+└── e2e/
+    ├── src/
+    │   ├── app.e2e-spec.ts
+    │   ├── contact-form.e2e-spec.ts
+    │   └── navigation.e2e-spec.ts
+    └── playwright.config.ts
