@@ -1,0 +1,5 @@
+{
+  "github.copilot.customInstructions.enabled": true,
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "chat.agent.maxRequests": 10000
+}

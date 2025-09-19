@@ -10,7 +10,11 @@ build/
 out/
 
 # IDE and editor files
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/mcp.json
+!.vscode/mcp-wrapper.js
+
 .idea/
 *.swp
 *.swo

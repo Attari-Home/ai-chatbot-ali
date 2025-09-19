@@ -1,0 +1,31 @@
+{
+    "servers": {
+        "sequential-thinking": {
+            "command": "node",
+            "args": [
+                "${workspaceFolder}/.vscode/mcp-wrapper.js",
+                "npx",
+                "-y",
+                "@modelcontextprotocol/server-sequential-thinking"
+            ],
+            "env": {
+                "NODE_ENV": "production",
+                "WORKSPACE_FOLDER": "${workspaceFolder}"
+            }
+        },
+        "filesystem": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-filesystem",
+                "${workspaceFolder}",
+            ]
+        },
+        "playwright": {
+            "command": "npx",
+            "args": [
+                "@playwright/mcp@latest"
+            ]
+        }
+    }
+}
