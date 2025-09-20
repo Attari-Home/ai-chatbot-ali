@@ -1,0 +1,166 @@
+<!-- UAE Information AI Chatbot Interface -->
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-amber-50">
+  <!-- Header -->
+  <div class="bg-white shadow-sm border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-amber-500 rounded-full flex items-center justify-center">
+            <span class="text-white font-bold text-lg">🤖</span>
+          </div>
+          <div>
+            <h1 class="text-xl font-bold text-gray-900">UAE Information AI Chatbot</h1>
+            <p class="text-sm text-gray-600">Competition Entry - Ali Robotics Team</p>
+          </div>
+        </div>
+        
+        <!-- Language Switcher -->
+        <div class="flex items-center space-x-2">
+          <button 
+            (click)="switchLanguage('en')"
+            [class]="currentLanguage === 'en' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'"
+            class="px-3 py-1 rounded-full text-sm font-medium transition-colors">
+            EN
+          </button>
+          <button 
+            (click)="switchLanguage('ar')"
+            [class]="currentLanguage === 'ar' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'"
+            class="px-3 py-1 rounded-full text-sm font-medium transition-colors">
+            عربي
+          </button>
+          <button 
+            (click)="switchLanguage('pa')"
+            [class]="currentLanguage === 'pa' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'"
+            class="px-3 py-1 rounded-full text-sm font-medium transition-colors">
+            ਪੰਜਾਬੀ
+          </button>
+          <button 
+            (click)="clearChat()"
+            class="ml-4 px-3 py-1 bg-red-500 text-white rounded-full text-sm hover:bg-red-600 transition-colors"
+            title="Clear Chat">
+            🗑️
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Container -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden h-[calc(100vh-200px)] flex flex-col">
+      
+      <!-- Messages Area -->
+      <div class="flex-1 overflow-y-auto p-6 space-y-4" #messagesContainer>
+        <div *ngFor="let message of messages" 
+             [class]="message.isUser ? 'flex justify-end' : 'flex justify-start'">
+          
+          <!-- User Message -->
+          <div *ngIf="message.isUser" 
+               class="max-w-xs lg:max-w-md px-4 py-2 bg-blue-600 text-white rounded-2xl rounded-br-md">
+            <p class="text-sm whitespace-pre-wrap">{{ message.text }}</p>
+            <p class="text-xs opacity-75 mt-1">{{ message.timestamp | date:'HH:mm' }}</p>
+          </div>
+          
+          <!-- Bot Message -->
+          <div *ngIf="!message.isUser" 
+               class="max-w-xs lg:max-w-2xl px-4 py-2 bg-gray-100 text-gray-900 rounded-2xl rounded-bl-md">
+            <div class="flex items-start space-x-2">
+              <span class="text-lg">🤖</span>
+              <div class="flex-1">
+                <p class="text-sm whitespace-pre-wrap leading-relaxed">{{ message.text }}</p>
+                <p class="text-xs text-gray-500 mt-1">{{ message.timestamp | date:'HH:mm' }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typing Indicator -->
+        <div *ngIf="isTyping" class="flex justify-start">
+          <div class="max-w-xs px-4 py-2 bg-gray-100 text-gray-900 rounded-2xl rounded-bl-md">
+            <div class="flex items-center space-x-2">
+              <span class="text-lg">🤖</span>
+              <div class="flex space-x-1">
+                <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Replies -->
+      <div *ngIf="messages.length <= 1" class="px-6 py-4 border-t border-gray-100">
+        <p class="text-sm text-gray-600 mb-3">Quick suggestions:</p>
+        <div class="flex flex-wrap gap-2">
+          <button *ngFor="let reply of quickReplies"
+                  (click)="onQuickReply(reply)"
+                  class="px-3 py-2 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors border border-blue-200">
+            {{ reply.text }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <form [formGroup]="chatForm" (ngSubmit)="onSendMessage()" 
+            class="p-6 border-t border-gray-100">
+        <div class="flex items-end space-x-4">
+          <div class="flex-1">
+            <textarea 
+              formControlName="message"
+              placeholder="Ask me about UAE tourist spots, transport, events, or emergency services..."
+              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              rows="1"
+              [attr.dir]="currentLanguage === 'ar' ? 'rtl' : 'ltr'"
+              (keydown.enter)="onEnterKeyPress($event)">
+            </textarea>
+          </div>
+          <button 
+            type="submit"
+            [disabled]="!chatForm.valid || isTyping"
+            class="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+            <span class="sr-only">Send message</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Input Validation -->
+        <div *ngIf="chatForm.get('message')?.invalid && chatForm.get('message')?.touched" 
+             class="mt-2 text-sm text-red-600">
+          Please enter a message to continue.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Features Info -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <div class="bg-white rounded-xl shadow-sm p-6">
+      <h2 class="text-lg font-semibold text-gray-900 mb-4">🇦🇪 What I Can Help You With</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="text-center p-4 bg-blue-50 rounded-lg">
+          <div class="text-2xl mb-2">🏖️</div>
+          <h3 class="font-medium text-gray-900">Tourist Spots</h3>
+          <p class="text-sm text-gray-600">Attractions, recommendations, hours</p>
+        </div>
+        <div class="text-center p-4 bg-green-50 rounded-lg">
+          <div class="text-2xl mb-2">🚗</div>
+          <h3 class="font-medium text-gray-900">Transportation</h3>
+          <p class="text-sm text-gray-600">Metro, bus, taxi, routes</p>
+        </div>
+        <div class="text-center p-4 bg-purple-50 rounded-lg">
+          <div class="text-2xl mb-2">🎉</div>
+          <h3 class="font-medium text-gray-900">Cultural Events</h3>
+          <p class="text-sm text-gray-600">Festivals, customs, dining</p>
+        </div>
+        <div class="text-center p-4 bg-red-50 rounded-lg">
+          <div class="text-2xl mb-2">🚨</div>
+          <h3 class="font-medium text-gray-900">Emergency Services</h3>
+          <p class="text-sm text-gray-600">Contacts, hospitals, police</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
