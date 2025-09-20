@@ -1,20 +1,20 @@
 .tourist-spots-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #00b2f8 0%, #c406eb 100%);
 }
 
 .header-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  color: rgb(5, 0, 0);
 }
 
 .spot-card {
-  border: 1px solid #e2e8f0;
+  border: 1px solid #5297f1;
   transition: all 0.3s ease;
 }
 
 .spot-card:hover {
-  border-color: #3b82f6;
+  border-color: #1d05f1;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
@@ -32,7 +32,7 @@
 }
 
 .fixed::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #023864;
   border-radius: 4px;
 }
 
@@ -78,6 +78,7 @@
 
 /* Enhance modal backdrop */
 .fixed.inset-0 {
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
 

@@ -29,7 +29,11 @@ interface SuggestionResponse {
 @Component({
   selector: 'app-chatbot',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   templateUrl: './chatbot.component.html',
   styleUrl: './chatbot.component.css'
 })
@@ -37,17 +41,25 @@ export class ChatbotComponent implements OnInit {
   private metaService = inject(MetaService);
   private fb = inject(FormBuilder);
 
-  chatForm!: FormGroup;
+  chatForm: FormGroup;
   messages: ChatMessage[] = [];
   isTyping = false;
   currentLanguage = 'en';
+
+  constructor() {
+    // Initialize form in constructor
+    this.chatForm = this.fb.group({
+      message: ['', [Validators.required, Validators.minLength(1)]]
+    });
+  }
   suggestions: Suggestion[] = [];
 
   private async loadSuggestions() {
     try {
-      const response = await fetch('assets/data/chatbot-suggestions.json');
+      const response = await fetch('assets/data/question_answer.json');
       const data: SuggestionResponse = await response.json();
       this.suggestions = data.suggestions;
+      console.log('Loaded suggestions:', this.suggestions); // Debug log
     } catch (error) {
       console.error('Error loading suggestions:', error);
     }
@@ -56,14 +68,40 @@ export class ChatbotComponent implements OnInit {
   private findSuggestion(query: string): Suggestion | undefined {
     if (!this.suggestions.length) return undefined;
     
-    // Convert query to lowercase for case-insensitive matching
-    const normalizedQuery = query.toLowerCase();
+    // Convert query to lowercase and remove punctuation for better matching
+    const normalizedQuery = query.toLowerCase().replace(/[.,?!]/g, '').trim();
     
-    // Find the best matching suggestion
-    return this.suggestions.find(suggestion => 
-      suggestion.question.toLowerCase().includes(normalizedQuery) ||
-      normalizedQuery.includes(suggestion.question.toLowerCase())
-    );
+    // Split into words for better matching
+    const queryWords = normalizedQuery.split(' ').filter(word => word.length > 2);
+    
+    // Find the best matching suggestion by scoring each one
+    let bestMatch: {suggestion: Suggestion, score: number} | undefined;
+    
+    this.suggestions.forEach(suggestion => {
+      const normalizedQuestion = suggestion.question.toLowerCase().replace(/[.,?!]/g, '').trim();
+      const questionWords = normalizedQuestion.split(' ').filter(word => word.length > 2);
+      
+      // Calculate match score based on word overlap
+      let score = 0;
+      queryWords.forEach(queryWord => {
+        if (questionWords.some(word => word.includes(queryWord) || queryWord.includes(word))) {
+          score++;
+        }
+      });
+      
+      // Bonus points for exact matches
+      if (normalizedQuery === normalizedQuestion) {
+        score += 10;
+      }
+      
+      // Update best match if this score is higher
+      if (score > 0 && (!bestMatch || score > bestMatch.score)) {
+        bestMatch = {suggestion, score};
+      }
+    });
+    
+    // Return the suggestion if it has a minimum score (at least 2 matching words)
+    return bestMatch && bestMatch.score >= 2 ? bestMatch.suggestion : undefined;
   }
 
   // Quick reply suggestions
@@ -84,7 +122,17 @@ export class ChatbotComponent implements OnInit {
     });
 
     // Load suggestions
-    await this.loadSuggestions();
+    try {
+      await this.loadSuggestions();
+      console.log('Suggestions loaded successfully');
+    } catch (error) {
+      console.error('Error loading suggestions:', error);
+    }
+
+    // Monitor form state
+    this.chatForm.valueChanges.subscribe(val => {
+      console.log('Form value changed:', val);
+    });
 
     this.initializeForm();
     this.addWelcomeMessage();
@@ -93,6 +141,15 @@ export class ChatbotComponent implements OnInit {
   private initializeForm() {
     this.chatForm = this.fb.group({
       message: ['', [Validators.required, Validators.minLength(1)]]
+    });
+
+    // Debug: Monitor form changes
+    this.chatForm.valueChanges.subscribe(val => {
+      console.log('Form value changed:', val);
+    });
+
+    this.chatForm.statusChanges.subscribe(status => {
+      console.log('Form status changed:', status);
     });
   }
 
@@ -147,13 +204,36 @@ What would you like to know about the UAE today?`,
   }
 
   onSendMessage() {
+    console.log('Send button clicked');
+    console.log('Form status:', this.chatForm.status);
+    console.log('Form value:', this.chatForm.value);
+    console.log('Is typing:', this.isTyping);
+    
+    const messageControl = this.chatForm.get('message');
+    console.log('Message control:', {
+      value: messageControl?.value,
+      valid: messageControl?.valid,
+      errors: messageControl?.errors,
+      dirty: messageControl?.dirty,
+      touched: messageControl?.touched
+    });
+    
     if (this.chatForm.valid) {
-      const messageText = this.chatForm.get('message')?.value.trim();
-      if (messageText) {
-        this.addUserMessage(messageText);
-        this.chatForm.reset();
-        this.processUserQuery(messageText);
+      const messageText = messageControl?.value;
+      console.log('Valid message text:', messageText);
+      
+      if (messageText && messageText.trim()) {
+        try {
+          this.addUserMessage(messageText.trim());
+          this.processUserQuery(messageText.trim());
+          this.chatForm.reset();
+          console.log('Message processed successfully');
+        } catch (error) {
+          console.error('Error processing message:', error);
+        }
       }
+    } else {
+      console.log('Form validation errors:', this.chatForm.errors);
     }
   }
 
@@ -184,14 +264,17 @@ What would you like to know about the UAE today?`,
   }
 
   private async processUserQuery(query: string, category?: string) {
+    this.isTyping = true;
+    
     // First check if we have a matching suggestion
     const suggestion = this.findSuggestion(query);
     if (suggestion) {
+      // Short delay to simulate processing
+      await new Promise(resolve => setTimeout(resolve, 500));
       this.addBotMessage(suggestion.answer, category || 'general');
+      this.isTyping = false;
       return;
     }
-    this.isTyping = true;
-    
     // Simulate AI processing delay
     setTimeout(() => {
       const response = this.generateAIResponse(query, category);
@@ -383,9 +466,15 @@ I'm designed to provide the most helpful UAE information possible!`;
     this.addWelcomeMessage();
   }
 
-  onEnterKeyPress(event: Event): void {
-    const keyboardEvent = event as KeyboardEvent;
-    if (!keyboardEvent.shiftKey) {
+  onEnterKeyPress(event: KeyboardEvent): void {
+    console.log('Enter key pressed', {
+      shiftKey: event.shiftKey,
+      key: event.key,
+      formValid: this.chatForm.valid,
+      isTyping: this.isTyping
+    });
+    
+    if (!event.shiftKey && event.key === 'Enter') {
       event.preventDefault();
       if (this.chatForm.valid && !this.isTyping) {
         this.onSendMessage();
