@@ -87,3 +87,7 @@ tmp/
 temp/
 node_modules
 .playwright-mcp/
+
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
