@@ -87,34 +87,47 @@
     "dimensions": "18\"L x 12\"W x 8\"H",
     "featured": false
   },
+  [
   {
-    "id": "proj004",
-    "title": "Autonomous Navigation System",
-    "description": "Research and development project focusing on advanced autonomous navigation using computer vision, LIDAR, and machine learning algorithms. Preparing for future competition challenges.",
-    "status": "Active", 
-    "season": "2024-2025",
-    "game": "Research Project",
-    "startDate": "2024-02-01",
-    "endDate": "2024-11-30",
-    "teamMembers": ["tm002", "tm005", "tm009"],
-    "technologies": ["Python", "OpenCV", "TensorFlow", "ROS", "LIDAR", "IMU"],
-    "achievements": [
-      "Science Fair Winner",
-      "Innovation Recognition"
-    ],
-    "media": {
-      "images": [
-        "/assets/images/projects/autonomous-nav-1.jpg",
-        "/assets/images/projects/autonomous-nav-2.jpg"
-      ],
-      "videos": ["/assets/videos/projects/autonomous-demo.mp4"],
-      "documentation": "/assets/docs/autonomous-research-paper.pdf"
-    },
-    "repository": "https://github.com/ali-robotics/autonomous-navigation",
-    "weight": null,
-    "dimensions": "Variable",
-    "featured": true
+    "id": 1,
+    "title": "Autonomous Navigation Robot",
+    "description": "Advanced robotic system capable of autonomous navigation using computer vision and machine learning algorithms.",
+    "category": "Robotics",
+    "status": "Active",
+    "technologies": ["Python", "OpenCV", "ROS", "Machine Learning"],
+    "startDate": "2024-01-15",
+    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop&auto=format",
+    "gallery": [
+      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1563207153-f403bf289096?w=400&h=300&fit=crop&auto=format"
+    ]
   },
+  {
+    "id": 2,
+    "title": "AI-Powered Voice Assistant",
+    "description": "Intelligent voice assistant with natural language processing capabilities for educational environments.",
+    "category": "AI",
+    "status": "Completed",
+    "technologies": ["Python", "TensorFlow", "NLP", "Speech Recognition"],
+    "startDate": "2023-09-01",
+    "endDate": "2024-02-28",
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop&auto=format",
+    "gallery": [
+      "https://images.unsplash.com/photo-1589254065878-42c9da997008?w=400&h=300&fit=crop&auto=format"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Educational Robotics Platform",
+    "description": "Interactive robotics platform designed for STEM education in schools and universities.",
+    "category": "Education",
+    "status": "In Development",
+    "technologies": ["Arduino", "Python", "Web Technologies", "IoT"],
+    "startDate": "2024-03-01",
+    "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=400&h=300&fit=crop&auto=format",
+    "gallery": []
+  }
+],
   {
     "id": "proj005",
     "title": "Community Outreach Robot",

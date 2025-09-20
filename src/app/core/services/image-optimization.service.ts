@@ -25,6 +25,54 @@ export class ImageOptimizationService {
 
   constructor() { }
 
+  // Fallback images for different categories
+  private fallbackImages = {
+    logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQwIiBmaWxsPSIjNEY0NkU1Ii8+Cjx0ZXh0IHg9IjUwIiB5PSI1NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiPkFMSTwvdGV4dD4KPC9zdmc+',
+    project: 'https://via.placeholder.com/400x300/6366f1/ffffff?text=Project+Image',
+    news: 'https://via.placeholder.com/400x300/4f46e5/ffffff?text=News+Image',
+    team: 'https://via.placeholder.com/300x300/9ca3af/ffffff?text=Team+Member',
+    blog: 'https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Blog+Post',
+    event: 'https://via.placeholder.com/600x400/0ea5e9/ffffff?text=Event+Image',
+    sponsor: 'https://via.placeholder.com/200x100/6b7280/ffffff?text=Sponsor+Logo'
+  };
+
+  // Get optimized image URL with fallback
+  getOptimizedImageUrl(originalUrl: string, category: keyof typeof this.fallbackImages = 'project', width?: number, height?: number): string {
+    if (!originalUrl) {
+      return this.fallbackImages[category];
+    }
+
+    // If it's already a placeholder or data URL, return as is
+    if (originalUrl.includes('placeholder') || originalUrl.startsWith('data:')) {
+      return originalUrl;
+    }
+
+    // If it's an Unsplash URL, ensure proper parameters
+    if (originalUrl.includes('unsplash.com')) {
+      const url = new URL(originalUrl);
+      if (width) url.searchParams.set('w', width.toString());
+      if (height) url.searchParams.set('h', height.toString());
+      if (!url.searchParams.has('fit')) url.searchParams.set('fit', 'crop');
+      if (!url.searchParams.has('auto')) url.searchParams.set('auto', 'format');
+      return url.toString();
+    }
+
+    return originalUrl;
+  }
+
+  // Get fallback image for a specific category
+  getFallbackImage(category: keyof typeof this.fallbackImages): string {
+    return this.fallbackImages[category];
+  }
+
+  // Handle image load error
+  handleImageError(event: Event, category: keyof typeof this.fallbackImages = 'project'): void {
+    const img = event.target as HTMLImageElement;
+    if (img && !img.src.includes('placeholder') && !img.src.startsWith('data:')) {
+      img.src = this.fallbackImages[category];
+    }
+  }
+
   /**
    * Generate optimized image configuration for responsive images
    */

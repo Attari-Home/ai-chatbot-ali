@@ -86,3 +86,4 @@ android/app/
 tmp/
 temp/
 node_modules
+.playwright-mcp/

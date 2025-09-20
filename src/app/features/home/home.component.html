@@ -1,232 +1,90 @@
 <!-- Hero Section -->
-<section class="hero-gradient text-white py-20 sm:py-32">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <!-- Hero Content -->
-      <div class="animate-fade-in">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-          Building the Future,
-          <span class="text-gradient">One Robot at a Time</span>
-        </h1>
-        <p class="text-xl text-blue-100 mb-8 leading-relaxed">
-          We are a passionate group of students from Ali School dedicated to STEM education 
-          through competitive robotics. Join us as we innovate, learn, and compete at the highest levels.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a routerLink="/team" class="btn btn-primary">
-            Meet Our Team
-          </a>
-          <a routerLink="/projects" class="btn btn-outline">
-            View Projects
-          </a>
-        </div>
-      </div>
-      
-      <!-- Hero Image -->
-      <div class="animate-slide-up">
-        <img 
-          src="/assets/images/hero-robot.jpg" 
-          alt="Ali Robotics Team with their competition robot"
-          class="rounded-lg shadow-2xl w-full h-auto"
-        >
-      </div>
+<section class="hero-section bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20">
+  <div class="container mx-auto px-4 text-center">
+    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/robotframework.svg" 
+         alt="ALI Robotics Logo" 
+         class="mx-auto mb-8 h-24 w-auto filter invert"
+         (error)="onImageError($event, 'logo')"
+         loading="lazy">
+    <h1 class="text-5xl font-bold mb-6">{{ content.hero.title }}</h1>
+    <p class="text-xl mb-8 max-w-3xl mx-auto">{{ content.hero.subtitle }}</p>
+    <div class="space-x-4">
+      <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+        {{ content.hero.primaryCta }}
+      </button>
+      <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+        {{ content.hero.secondaryCta }}
+      </button>
     </div>
   </div>
 </section>
 
-<!-- Latest News Section -->
-<section class="section-padding bg-white">
-  <div class="max-w-7xl mx-auto container-padding">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Latest News</h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Stay updated with our latest achievements, competitions, and team milestones.
-      </p>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- News Card 1 -->
-      <article class="card hover-lift">
-        <img 
-          src="/assets/images/news/regional-championship.jpg" 
-          alt="Team celebrating at regional championship"
-          class="w-full h-48 object-cover"
-        >
-        <div class="card-body">
-          <div class="flex items-center text-sm text-gray-500 mb-2">
-            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
-            </svg>
-            March 20, 2024
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">
-            Regional Championship Success!
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Our team achieved remarkable success at the regional robotics championship, 
-            securing second place and the Innovation Award.
-          </p>
-          <a href="/blog/regional-championship-success" class="text-primary-600 font-medium hover:text-primary-700">
-            Read More →
-          </a>
-        </div>
-      </article>
-      
-      <!-- News Card 2 -->
-      <article class="card hover-lift">
-        <img 
-          src="/assets/images/news/new-robot-design.jpg" 
-          alt="Team working on new robot design"
-          class="w-full h-48 object-cover"
-        >
-        <div class="card-body">
-          <div class="flex items-center text-sm text-gray-500 mb-2">
-            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
-            </svg>
-            February 15, 2024
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">
-            New Robot Design Process
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Take a behind-the-scenes look at our innovative design process for 
-            the 2024 competition season robot.
-          </p>
-          <a href="/blog/robot-design-process" class="text-primary-600 font-medium hover:text-primary-700">
-            Read More →
-          </a>
-        </div>
-      </article>
-      
-      <!-- News Card 3 -->
-      <article class="card hover-lift">
-        <img 
-          src="/assets/images/news/team-expansion.jpg" 
-          alt="New team members joining"
-          class="w-full h-48 object-cover"
-        >
-        <div class="card-body">
-          <div class="flex items-center text-sm text-gray-500 mb-2">
-            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
-            </svg>
-            January 10, 2024
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">
-            Team Expansion & New Members
-          </h3>
-          <p class="text-gray-600 mb-4">
-            We're excited to welcome new talented students to our robotics team 
-            for the upcoming competition season.
-          </p>
-          <a href="/blog/team-expansion" class="text-primary-600 font-medium hover:text-primary-700">
-            Read More →
-          </a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Upcoming Events Section -->
-<section class="section-padding bg-gray-50">
-  <div class="max-w-7xl mx-auto container-padding">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Upcoming Events</h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Join us at our upcoming competitions, workshops, and community events.
-      </p>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Event Card 1 -->
-      <div class="card hover-lift">
-        <div class="card-body">
-          <div class="flex items-start justify-between mb-4">
-            <div class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">
-              Competition
-            </div>
-            <div class="text-right">
-              <div class="text-2xl font-bold text-gray-900">15-17</div>
-              <div class="text-sm text-gray-500">MAR 2024</div>
-            </div>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">
-            FRC Regional Championship
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Join us at the regional championship where we'll compete with our latest robot design 
-            against teams from across the UAE.
-          </p>
-          <div class="flex items-center text-sm text-gray-500 mb-4">
-            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-            </svg>
-            Dubai World Trade Centre
-          </div>
-          <a href="/events/frc-regional-2024" class="btn btn-primary">
-            Register Now
-          </a>
-        </div>
-      </div>
-      
-      <!-- Event Card 2 -->
-      <div class="card hover-lift">
-        <div class="card-body">
-          <div class="flex items-start justify-between mb-4">
-            <div class="bg-secondary-100 text-secondary-800 px-3 py-1 rounded-full text-sm font-medium">
-              Workshop
-            </div>
-            <div class="text-right">
-              <div class="text-2xl font-bold text-gray-900">22</div>
-              <div class="text-sm text-gray-500">MAR 2024</div>
-            </div>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">
-            Programming Workshop
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Learn advanced programming techniques and robot control systems 
-            in our hands-on workshop for students.
-          </p>
-          <div class="flex items-center text-sm text-gray-500 mb-4">
-            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-            </svg>
-            Ali School Robotics Lab
-          </div>
-          <a href="/events/programming-workshop" class="btn btn-primary">
-            Join Workshop
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Sponsors Section -->
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto container-padding">
+<!-- Mission Section -->
+<section class="mission-section py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
     <div class="text-center mb-12">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">Our Supporters</h2>
-      <p class="text-gray-600">
-        Thanks to our amazing sponsors and partners who make our robotics program possible.
-      </p>
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">{{ content.mission.title }}</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">{{ content.mission.description }}</p>
     </div>
     
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-      <div class="flex justify-center">
-        <img src="/assets/images/sponsors/sponsor-1.png" alt="Sponsor 1" class="h-16 grayscale hover:grayscale-0 transition-all duration-300">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div *ngFor="let feature of content.mission.features" class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <i [class]="feature.icon + ' text-4xl text-blue-600 mb-4'"></i>
+        <h3 class="text-xl font-semibold mb-3">{{ feature.title }}</h3>
+        <p class="text-gray-600">{{ feature.description }}</p>
       </div>
-      <div class="flex justify-center">
-        <img src="/assets/images/sponsors/sponsor-2.png" alt="Sponsor 2" class="h-16 grayscale hover:grayscale-0 transition-all duration-300">
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects-section py-16">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
+      <p class="text-xl text-gray-600">Explore our latest innovations in robotics and AI</p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <div *ngFor="let project of projects" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img [src]="getImageUrl(project.image, 'project')" 
+             [alt]="project.title" 
+             class="w-full h-48 object-cover"
+             (error)="onImageError($event, 'project')"
+             loading="lazy">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">{{ project.category }}</span>
+            <span class="text-sm text-gray-500">{{ project.status }}</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">{{ project.title }}</h3>
+          <p class="text-gray-600">{{ project.description }}</p>
+        </div>
       </div>
-      <div class="flex justify-center">
-        <img src="/assets/images/sponsors/sponsor-3.png" alt="Sponsor 3" class="h-16 grayscale hover:grayscale-0 transition-all duration-300">
-      </div>
-      <div class="flex justify-center">
-        <img src="/assets/images/sponsors/sponsor-4.png" alt="Sponsor 4" class="h-16 grayscale hover:grayscale-0 transition-all duration-300">
+    </div>
+  </div>
+</section>
+
+<!-- News Section -->
+<section class="news-section py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Latest News</h2>
+      <p class="text-xl text-gray-600">Stay updated with our recent achievements and announcements</p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+      <div *ngFor="let news of newsItems" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img [src]="getImageUrl(news.image, 'news')" 
+             [alt]="news.title" 
+             class="w-full h-48 object-cover"
+             (error)="onImageError($event, 'news')"
+             loading="lazy">
+        <div class="p-6">
+          <div class="text-sm text-gray-500 mb-2">{{ news.date | date:'mediumDate' }}</div>
+          <h3 class="text-xl font-semibold mb-3">{{ news.title }}</h3>
+          <p class="text-gray-600">{{ news.excerpt }}</p>
+        </div>
       </div>
     </div>
   </div>
