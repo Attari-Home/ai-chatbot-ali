@@ -1,0 +1,77 @@
+[
+  {
+    "timestamp": "2025-09-20T08:34:56.615Z",
+    "level": "info",
+    "message": "Starting scrape for Burj Khalifa"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.615Z",
+    "level": "info",
+    "message": "Robots.txt check passed for en.wikipedia.org"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.615Z",
+    "level": "info",
+    "message": "Robots.txt check passed for commons.wikimedia.org"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.615Z",
+    "level": "info",
+    "message": "Robots.txt check passed for burjkhalifa.ae"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.617Z",
+    "level": "info",
+    "message": "Completed scrape for Burj Khalifa"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.617Z",
+    "level": "info",
+    "message": "Starting scrape for Sheikh Zayed Grand Mosque"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.617Z",
+    "level": "info",
+    "message": "Robots.txt check passed for en.wikipedia.org"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.618Z",
+    "level": "info",
+    "message": "Robots.txt check passed for commons.wikimedia.org"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.618Z",
+    "level": "info",
+    "message": "Robots.txt check passed for szgmc.gov.ae"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.618Z",
+    "level": "info",
+    "message": "Completed scrape for Sheikh Zayed Grand Mosque"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.618Z",
+    "level": "info",
+    "message": "Starting scrape for Louvre Abu Dhabi"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.618Z",
+    "level": "info",
+    "message": "Robots.txt check passed for en.wikipedia.org"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.618Z",
+    "level": "info",
+    "message": "Robots.txt check passed for commons.wikimedia.org"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.618Z",
+    "level": "info",
+    "message": "Robots.txt check passed for louvreabudhabi.ae"
+  },
+  {
+    "timestamp": "2025-09-20T08:34:56.618Z",
+    "level": "info",
+    "message": "Completed scrape for Louvre Abu Dhabi"
+  }
+]

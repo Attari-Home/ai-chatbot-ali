@@ -4,7 +4,7 @@
   "description": "Ali School Robotics Team Website - Building the Future, One Robot at a Time",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0 --port 4211",
     "serve": "ng serve --host 0.0.0.0 --port 4211",
     "build": "ng build --configuration production",
     "build:prod": "ng build --configuration production --output-hashing=all",

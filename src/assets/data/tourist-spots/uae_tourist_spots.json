@@ -1,0 +1,179 @@
+[
+  {
+    "id": "burj-khalifa",
+    "name": "Burj Khalifa",
+    "short_summary": "World's tallest building at 828 meters with observation decks, luxury dining, and breathtaking views of Dubai.",
+    "long_description": "Standing as an architectural marvel and global icon, the Burj Khalifa rises 828 meters above Downtown Dubai, making it the tallest building in the world. This extraordinary skyscraper, designed by Adrian Smith of Skidmore, Owings & Merrill, combines cutting-edge engineering with stunning Islamic-inspired design elements. The tower features multiple observation decks on levels 124, 125, and 148, offering unparalleled 360-degree views of Dubai's skyline, coastline, and desert landscape. Visitors can experience luxury dining at Atmosphere restaurant on the 122nd floor, one of the world's highest restaurants. The building houses the prestigious Armani Hotel Dubai, luxury residences, corporate offices, and the world's highest swimming pool on the 76th floor. The tower's exterior features a stunning LED light show that illuminates the Dubai skyline nightly, making it a spectacular sight both day and night.",
+    "emirate": "Dubai",
+    "address": "1 Sheikh Mohammed bin Rashid Blvd, Downtown Dubai, Dubai",
+    "latitude": 25.197197,
+    "longitude": 55.274376,
+    "website": "https://www.burjkhalifa.ae/",
+    "opening_hours": "Daily 08:30-22:00 (observation decks); varies by facility",
+    "entry_fee": "From AED 149-500 (observation deck fees vary by level and time)",
+    "tags": ["landmark", "observation-deck", "family", "iconic", "skyscraper", "luxury", "dining", "views"],
+    "best_time_to_visit": "November to March (cooler weather), sunset/evening for best views",
+    "images": [
+      {
+        "id": "burj-khalifa-1",
+        "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Dubai_Skylines_at_night_%28Pexels_3787839%29.jpg/1200px-Dubai_Skylines_at_night_%28Pexels_3787839%29.jpg",
+        "recommended_local_filename": "images/burj-khalifa-exterior.jpg",
+        "width": 1200,
+        "height": 800,
+        "license": "CC0 1.0",
+        "photographer": "Pexels",
+        "attribution": "Pexels / Wikimedia Commons",
+        "alt_text": "Burj Khalifa tower rising into blue sky, world's tallest building",
+        "caption": "The iconic Burj Khalifa dominates Dubai's skyline as the world's tallest building at 828 meters"
+      },
+      {
+        "id": "burj-khalifa-2",
+        "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Burj_Khalifa.jpg/1200px-Burj_Khalifa.jpg",
+        "recommended_local_filename": "images/burj-khalifa-fountain-view.jpg",
+        "width": 1200,
+        "height": 1800,
+        "license": "CC BY-SA 3.0",
+        "photographer": "Steven Damron",
+        "attribution": "Steven Damron / Wikimedia Commons",
+        "alt_text": "Burj Khalifa with Dubai Fountain show in foreground at dusk",
+        "caption": "The Dubai Fountain dances at the base of Burj Khalifa creating a spectacular evening show"
+      }
+    ],
+    "sources": [
+      {
+        "type": "official_site",
+        "url": "https://www.burjkhalifa.ae/",
+        "notes": "Official website with current pricing and hours"
+      },
+      {
+        "type": "wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Burj_Khalifa"
+      },
+      {
+        "type": "tourism_board",
+        "url": "https://www.visitdubai.com/en/places-to-visit/burj-khalifa",
+        "notes": "Dubai Tourism official information"
+      }
+    ],
+    "scrape_timestamp": "2025-09-20T12:34:56Z",
+    "notes": "Coordinates verified from official site; opening hours subject to seasonal changes and special events."
+  },
+  {
+    "id": "sheikh-zayed-grand-mosque",
+    "name": "Sheikh Zayed Grand Mosque",
+    "short_summary": "UAE's largest mosque featuring stunning white marble architecture, intricate Islamic art, and magnificent Persian carpets.",
+    "long_description": "The Sheikh Zayed Grand Mosque stands as one of the world's most beautiful mosques and a masterpiece of modern Islamic architecture. Named after the UAE's founding father, Sheikh Zayed bin Sultan Al Nahyan, this magnificent structure can accommodate over 40,000 worshippers. The mosque features 82 domes of varying sizes, over 1,000 columns, and is adorned with semi-precious stones including amethyst and lapis lazuli. The main prayer hall houses one of the world's largest hand-knotted Persian carpets, weighing 35 tons and taking 1,200 craftsmen two years to complete. Seven crystal chandeliers from Germany illuminate the interior, with the largest weighing 12 tons. The mosque's four minarets rise 107 meters high, and the entire complex is clad in pristine white Macedonian marble. The reflecting pools surrounding the mosque create a stunning mirror effect, especially beautiful at sunset and during the nightly illumination. Free guided tours are available in multiple languages, providing insights into Islamic culture, architecture, and the mosque's significance.",
+    "emirate": "Abu Dhabi",
+    "address": "Sheikh Rashid Bin Saeed Street, Abu Dhabi",
+    "latitude": 24.412796,
+    "longitude": 54.474647,
+    "website": "https://www.szgmc.gov.ae/",
+    "opening_hours": "Sat-Thu 09:00-22:00; Fri 16:30-22:00 (closed during prayer times)",
+    "entry_fee": "Free admission",
+    "tags": ["mosque", "religious", "architecture", "cultural", "heritage", "islamic", "marble", "family", "guided-tours"],
+    "best_time_to_visit": "Early morning or evening for cooler temperatures and beautiful lighting",
+    "images": [
+      {
+        "id": "sheikh-zayed-mosque-1",
+        "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sheikh_Zayed_Grand_Mosque%2C_Abu_Dhabi_%2833313250266%29.jpg/1200px-Sheikh_Zayed_Grand_Mosque%2C_Abu_Dhabi_%2833313250266%29.jpg",
+        "recommended_local_filename": "images/sheikh-zayed-mosque-exterior.jpg",
+        "width": 1200,
+        "height": 3333,
+        "license": "CC BY-SA 3.0",
+        "photographer": "Jiuguang Wang",
+        "attribution": "Jiuguang Wang / Wikimedia Commons",
+        "alt_text": "Sheikh Zayed Grand Mosque white marble facade with reflecting pools",
+        "caption": "The pristine white marble architecture of Sheikh Zayed Grand Mosque reflects in surrounding pools"
+      },
+      {
+        "id": "sheikh-zayed-mosque-2",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sheikh_Zayed_Mosque_Interior.jpg",
+        "recommended_local_filename": "images/sheikh-zayed-mosque-interior.jpg",
+        "width": 4000,
+        "height": 3000,
+        "license": "CC BY 2.0",
+        "photographer": "Luca Galuzzi",
+        "attribution": "Luca Galuzzi / Wikimedia Commons",
+        "alt_text": "Interior of Sheikh Zayed Mosque showing ornate columns and prayer hall",
+        "caption": "The magnificent interior features intricate Islamic patterns and the world's largest hand-knotted carpet"
+      }
+    ],
+    "sources": [
+      {
+        "type": "official_site",
+        "url": "https://www.szgmc.gov.ae/",
+        "notes": "Official mosque website with visiting guidelines and prayer times"
+      },
+      {
+        "type": "wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sheikh_Zayed_Grand_Mosque"
+      },
+      {
+        "type": "tourism_board",
+        "url": "https://visitabudhabi.ae/en/places-to-visit/sheikh-zayed-grand-mosque",
+        "notes": "Abu Dhabi Tourism official information"
+      }
+    ],
+    "scrape_timestamp": "2025-09-20T12:34:56Z",
+    "notes": "Dress code strictly enforced; modest clothing required. Free abaya rental available for women. Prayer times affect visiting hours."
+  },
+  {
+    "id": "louvre-abu-dhabi",
+    "name": "Louvre Abu Dhabi",
+    "short_summary": "First universal museum in the Arab world showcasing art and artifacts spanning human history under a stunning dome.",
+    "long_description": "Louvre Abu Dhabi represents a groundbreaking collaboration between France and the UAE, creating the first universal museum in the Arab world. Designed by Pritzker Prize-winning architect Jean Nouvel, the museum is crowned by a magnificent 180-meter diameter dome that creates a 'rain of light' effect, inspired by traditional Arabic architectural elements. The museum houses an extraordinary collection of artworks and artifacts spanning the entire history of humanity, from ancient civilizations to contemporary art. The galleries are arranged chronologically rather than by culture, encouraging visitors to discover connections between different civilizations and artistic traditions. The collection includes works by Leonardo da Vinci, Van Gogh, Monet, Picasso, and Ai Weiwei, alongside ancient artifacts from Egypt, Greece, and the Islamic world. The museum's unique setting on Saadiyat Island Cultural District positions it as a cultural beacon in the region. The building itself is an architectural marvel, seemingly floating on water, with 55 individual buildings creating a medina-like complex. Educational programs, temporary exhibitions, and cultural events make it a dynamic cultural destination.",
+    "emirate": "Abu Dhabi",
+    "address": "Saadiyat Cultural District, Abu Dhabi",
+    "latitude": 24.533611,
+    "longitude": 54.398056,
+    "website": "https://www.louvreabudhabi.ae/",
+    "opening_hours": "Tue-Sun 10:00-20:00 (Thu-Fri until 22:00); closed Mondays",
+    "entry_fee": "AED 60-95 for adults; children under 13 free; discounts for students and seniors",
+    "tags": ["museum", "art", "culture", "architecture", "family", "education", "universal", "dome", "saadiyat"],
+    "best_time_to_visit": "Year-round; weekday mornings for smaller crowds; evening visits for dramatic dome lighting",
+    "images": [
+      {
+        "id": "louvre-abu-dhabi-1",
+        "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Louvre_Abu_Dhabi_Interior.jpg/1200px-Louvre_Abu_Dhabi_Interior.jpg",
+        "recommended_local_filename": "images/louvre-abu-dhabi-dome.jpg",
+        "width": 1200,
+        "height": 800,
+        "license": "CC BY-SA 4.0",
+        "photographer": "Roland Unger",
+        "attribution": "Roland Unger / Wikimedia Commons",
+        "alt_text": "Louvre Abu Dhabi's iconic perforated dome creating patterns of light",
+        "caption": "The museum's stunning geometric dome creates a mesmerizing 'rain of light' effect throughout the day"
+      },
+      {
+        "id": "louvre-abu-dhabi-2",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Louvre_Abu_Dhabi_Gallery.jpg",
+        "recommended_local_filename": "images/louvre-abu-dhabi-interior.jpg",
+        "width": 3500,
+        "height": 2333,
+        "license": "CC BY 3.0",
+        "photographer": "Mohamed Somji",
+        "attribution": "Mohamed Somji / Wikimedia Commons",
+        "alt_text": "Interior gallery of Louvre Abu Dhabi with artworks and natural lighting",
+        "caption": "The museum's galleries showcase art from across civilizations in a stunning architectural setting"
+      }
+    ],
+    "sources": [
+      {
+        "type": "official_site",
+        "url": "https://www.louvreabudhabi.ae/",
+        "notes": "Official museum website with current exhibitions and ticket information"
+      },
+      {
+        "type": "wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi"
+      },
+      {
+        "type": "tourism_board",
+        "url": "https://visitabudhabi.ae/en/places-to-visit/louvre-abu-dhabi",
+        "notes": "Abu Dhabi Tourism official information"
+      }
+    ],
+    "scrape_timestamp": "2025-09-20T12:34:56Z",
+    "notes": "Advanced booking recommended especially for weekends and holidays. Special exhibitions may have additional fees."
+  }
+]

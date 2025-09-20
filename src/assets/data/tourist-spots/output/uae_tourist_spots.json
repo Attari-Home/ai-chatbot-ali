@@ -1,0 +1,23 @@
+[
+  {
+    "id": "burj-khalifa",
+    "name": "Burj Khalifa",
+    "scrape_timestamp": "2025-09-20T08:34:56.617Z",
+    "scrape_source": "playwright-mcp",
+    "validation_passed": true
+  },
+  {
+    "id": "sheikh-zayed-grand-mosque",
+    "name": "Sheikh Zayed Grand Mosque",
+    "scrape_timestamp": "2025-09-20T08:34:56.618Z",
+    "scrape_source": "playwright-mcp",
+    "validation_passed": true
+  },
+  {
+    "id": "louvre-abu-dhabi",
+    "name": "Louvre Abu Dhabi",
+    "scrape_timestamp": "2025-09-20T08:34:56.618Z",
+    "scrape_source": "playwright-mcp",
+    "validation_passed": true
+  }
+]

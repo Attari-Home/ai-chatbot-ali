@@ -1,0 +1,257 @@
+{
+  "burj_khalifa_schema": {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "name": "Burj Khalifa",
+    "description": "World's tallest building at 828 meters with observation decks, luxury dining, and breathtaking views of Dubai.",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": "https://commons.wikimedia.org/wiki/File:Burj_Khalifa.jpg",
+        "width": 4000,
+        "height": 6000,
+        "caption": "The iconic Burj Khalifa dominates Dubai's skyline as the world's tallest building at 828 meters"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Sheikh Mohammed bin Rashid Blvd",
+      "addressLocality": "Downtown Dubai",
+      "addressRegion": "Dubai",
+      "addressCountry": "AE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 25.197197,
+      "longitude": 55.274376
+    },
+    "url": "https://www.burjkhalifa.ae/",
+    "sameAs": [
+      "https://en.wikipedia.org/wiki/Burj_Khalifa",
+      "https://www.visitdubai.com/en/places-to-visit/burj-khalifa"
+    ],
+    "openingHours": [
+      "Mo-Su 08:30-22:00"
+    ],
+    "priceRange": "AED 149-500",
+    "touristType": ["landmark", "observation-deck", "family", "iconic", "skyscraper"],
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Observation Deck",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification", 
+        "name": "Restaurant",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Elevator Access",
+        "value": true
+      }
+    ],
+    "maximumAttendeeCapacity": 35000,
+    "isAccessibleForFree": false,
+    "publicAccess": true
+  },
+  
+  "sheikh_zayed_mosque_schema": {
+    "@context": "https://schema.org",
+    "@type": ["TouristAttraction", "ReligiousOrganization", "PlaceOfWorship"],
+    "name": "Sheikh Zayed Grand Mosque",
+    "description": "UAE's largest mosque featuring stunning white marble architecture, intricate Islamic art, and magnificent Persian carpets.",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": "https://commons.wikimedia.org/wiki/File:Sheikh_Zayed_Grand_Mosque_Abu_Dhabi.jpg",
+        "width": 5000,
+        "height": 3333,
+        "caption": "The pristine white marble architecture of Sheikh Zayed Grand Mosque reflects in surrounding pools"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sheikh Rashid Bin Saeed Street",
+      "addressLocality": "Abu Dhabi",
+      "addressRegion": "Abu Dhabi",
+      "addressCountry": "AE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 24.412796,
+      "longitude": 54.474647
+    },
+    "url": "https://www.szgmc.gov.ae/",
+    "sameAs": [
+      "https://en.wikipedia.org/wiki/Sheikh_Zayed_Grand_Mosque",
+      "https://visitabudhabi.ae/en/places-to-visit/sheikh-zayed-grand-mosque"
+    ],
+    "openingHours": [
+      "Sa-Th 09:00-22:00",
+      "Fr 16:30-22:00"
+    ],
+    "priceRange": "Free",
+    "touristType": ["mosque", "religious", "architecture", "cultural", "heritage"],
+    "religion": "Islam",
+    "denomination": "Sunni Islam",
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Guided Tours",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Prayer Facilities", 
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Visitor Center",
+        "value": true
+      }
+    ],
+    "maximumAttendeeCapacity": 40000,
+    "isAccessibleForFree": true,
+    "publicAccess": true,
+    "specialOpeningHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "16:30",
+      "closes": "22:00",
+      "validFrom": "2025-01-01",
+      "validThrough": "2025-12-31"
+    }
+  },
+
+  "louvre_abu_dhabi_schema": {
+    "@context": "https://schema.org",
+    "@type": ["Museum", "TouristAttraction", "CulturalCenter"],
+    "name": "Louvre Abu Dhabi",
+    "description": "First universal museum in the Arab world showcasing art and artifacts spanning human history under a stunning dome.",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": "https://commons.wikimedia.org/wiki/File:Louvre_Abu_Dhabi_Dome.jpg",
+        "width": 4500,
+        "height": 3000,
+        "caption": "The museum's stunning geometric dome creates a mesmerizing 'rain of light' effect throughout the day"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Saadiyat Cultural District",
+      "addressLocality": "Abu Dhabi",
+      "addressRegion": "Abu Dhabi", 
+      "addressCountry": "AE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 24.533611,
+      "longitude": 54.398056
+    },
+    "url": "https://www.louvreabudhabi.ae/",
+    "sameAs": [
+      "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+      "https://visitabudhabi.ae/en/places-to-visit/louvre-abu-dhabi"
+    ],
+    "openingHours": [
+      "Tu-Su 10:00-20:00",
+      "Th-Fr 10:00-22:00"
+    ],
+    "priceRange": "AED 60-95",
+    "touristType": ["museum", "art", "culture", "architecture", "education"],
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Audio Guide",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Gift Shop",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Cafe",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Wheelchair Accessible",
+        "value": true
+      }
+    ],
+    "isAccessibleForFree": false,
+    "publicAccess": true,
+    "specialOpeningHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Thursday", "Friday"],
+        "opens": "10:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Monday",
+        "opens": "00:00",
+        "closes": "00:00",
+        "validFrom": "2025-01-01",
+        "validThrough": "2025-12-31"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Museum Tickets",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Adult Admission"
+          },
+          "price": "95",
+          "priceCurrency": "AED"
+        },
+        {
+          "@type": "Offer", 
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Student Admission"
+          },
+          "price": "60",
+          "priceCurrency": "AED"
+        }
+      ]
+    }
+  },
+
+  "implementation_notes": {
+    "usage_instructions": [
+      "Copy the appropriate schema object for each tourist spot",
+      "Insert into HTML <script type='application/ld+json'> tags", 
+      "Validate using Google's Rich Results Test tool",
+      "Update URLs to match your domain structure"
+    ],
+    "seo_benefits": [
+      "Enhanced search result appearance with rich snippets",
+      "Better visibility in Google Maps and local search",
+      "Improved click-through rates from search results",  
+      "Voice search optimization for tourist queries"
+    ],
+    "customization_tips": [
+      "Add seasonal opening hours using specialOpeningHoursSpecification",
+      "Include current events using Event schema within the attraction",
+      "Add review aggregation using AggregateRating if you have reviews",
+      "Include accessibility features using amenityFeature"
+    ],
+    "validation_tools": [
+      "https://search.google.com/test/rich-results",
+      "https://validator.schema.org/",
+      "https://developers.google.com/search/docs/appearance/structured-data"
+    ]
+  }
+}

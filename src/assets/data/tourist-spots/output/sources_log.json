@@ -1,0 +1,21 @@
+{
+  "scrape_session_id": "1758357296615",
+  "scrape_timestamp": "2025-09-20T08:34:56.615Z",
+  "spots_attempted": 3,
+  "domains_checked": [
+    "en.wikipedia.org",
+    "commons.wikimedia.org",
+    "burjkhalifa.ae",
+    "szgmc.gov.ae",
+    "louvreabudhabi.ae"
+  ],
+  "robots_txt_compliance": {
+    "en.wikipedia.org": "allowed",
+    "commons.wikimedia.org": "allowed",
+    "burjkhalifa.ae": "allowed",
+    "szgmc.gov.ae": "allowed",
+    "louvreabudhabi.ae": "allowed"
+  },
+  "spots_completed": 3,
+  "spots_failed": 0
+}

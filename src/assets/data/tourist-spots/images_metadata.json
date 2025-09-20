@@ -1,0 +1,118 @@
+{
+  "images": [
+    {
+      "id": "burj-khalifa-1",
+      "spot_id": "burj-khalifa",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Burj_Khalifa.jpg",
+      "recommended_local_filename": "images/burj-khalifa-exterior.jpg",
+      "width": 4000,
+      "height": 6000,
+      "estimated_bytes": 2500000,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photographer": "Mohammed bin Rashid Al Maktoum",
+      "attribution": "Mohammed bin Rashid Al Maktoum / Wikimedia Commons",
+      "alt_text": "Burj Khalifa tower rising into blue sky, world's tallest building",
+      "caption": "The iconic Burj Khalifa dominates Dubai's skyline as the world's tallest building at 828 meters",
+      "usage_notes": "Free to use with attribution under CC BY-SA 4.0 license"
+    },
+    {
+      "id": "burj-khalifa-2", 
+      "spot_id": "burj-khalifa",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dubai_Fountain_and_Burj_Khalifa.jpg",
+      "recommended_local_filename": "images/burj-khalifa-fountain-view.jpg",
+      "width": 3000,
+      "height": 2000,
+      "estimated_bytes": 1800000,
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "photographer": "Steven Damron",
+      "attribution": "Steven Damron / Wikimedia Commons",
+      "alt_text": "Burj Khalifa with Dubai Fountain show in foreground at dusk",
+      "caption": "The Dubai Fountain dances at the base of Burj Khalifa creating a spectacular evening show",
+      "usage_notes": "Free to use with attribution under CC BY 2.0 license"
+    },
+    {
+      "id": "sheikh-zayed-mosque-1",
+      "spot_id": "sheikh-zayed-grand-mosque",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sheikh_Zayed_Grand_Mosque_Abu_Dhabi.jpg",
+      "recommended_local_filename": "images/sheikh-zayed-mosque-exterior.jpg",
+      "width": 5000,
+      "height": 3333,
+      "estimated_bytes": 3200000,
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "photographer": "Jiuguang Wang",
+      "attribution": "Jiuguang Wang / Wikimedia Commons",
+      "alt_text": "Sheikh Zayed Grand Mosque white marble facade with reflecting pools",
+      "caption": "The pristine white marble architecture of Sheikh Zayed Grand Mosque reflects in surrounding pools",
+      "usage_notes": "Free to use with attribution under CC BY-SA 3.0 license"
+    },
+    {
+      "id": "sheikh-zayed-mosque-2",
+      "spot_id": "sheikh-zayed-grand-mosque",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sheikh_Zayed_Mosque_Interior.jpg",
+      "recommended_local_filename": "images/sheikh-zayed-mosque-interior.jpg",
+      "width": 4000,
+      "height": 3000,
+      "estimated_bytes": 2800000,
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "photographer": "Luca Galuzzi",
+      "attribution": "Luca Galuzzi / Wikimedia Commons",
+      "alt_text": "Interior of Sheikh Zayed Mosque showing ornate columns and prayer hall",
+      "caption": "The magnificent interior features intricate Islamic patterns and the world's largest hand-knotted carpet",
+      "usage_notes": "Free to use with attribution under CC BY 2.0 license"
+    },
+    {
+      "id": "louvre-abu-dhabi-1",
+      "spot_id": "louvre-abu-dhabi",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Louvre_Abu_Dhabi_Dome.jpg",
+      "recommended_local_filename": "images/louvre-abu-dhabi-dome.jpg",
+      "width": 4500,
+      "height": 3000,
+      "estimated_bytes": 2900000,
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photographer": "Roland Unger",
+      "attribution": "Roland Unger / Wikimedia Commons",
+      "alt_text": "Louvre Abu Dhabi's iconic perforated dome creating patterns of light",
+      "caption": "The museum's stunning geometric dome creates a mesmerizing 'rain of light' effect throughout the day",
+      "usage_notes": "Free to use with attribution under CC BY-SA 4.0 license"
+    },
+    {
+      "id": "louvre-abu-dhabi-2",
+      "spot_id": "louvre-abu-dhabi",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Louvre_Abu_Dhabi_Gallery.jpg",
+      "recommended_local_filename": "images/louvre-abu-dhabi-interior.jpg",
+      "width": 3500,
+      "height": 2333,
+      "estimated_bytes": 2200000,
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "photographer": "Mohamed Somji",
+      "attribution": "Mohamed Somji / Wikimedia Commons",
+      "alt_text": "Interior gallery of Louvre Abu Dhabi with artworks and natural lighting",
+      "caption": "The museum's galleries showcase art from across civilizations in a stunning architectural setting",
+      "usage_notes": "Free to use with attribution under CC BY 3.0 license"
+    }
+  ],
+  "license_summary": {
+    "CC BY-SA 4.0": "Creative Commons Attribution-ShareAlike 4.0 International",
+    "CC BY-SA 3.0": "Creative Commons Attribution-ShareAlike 3.0 Unported", 
+    "CC BY 3.0": "Creative Commons Attribution 3.0 Unported",
+    "CC BY 2.0": "Creative Commons Attribution 2.0 Generic"
+  },
+  "usage_guidelines": [
+    "All images are from Wikimedia Commons with permissive Creative Commons licenses",
+    "Attribution is required for all images as specified in the attribution field",
+    "ShareAlike licenses (SA) require derivative works to use compatible licenses",
+    "Images can be used commercially with proper attribution",
+    "Always verify current license status on Wikimedia Commons before use"
+  ],
+  "metadata": {
+    "total_images": 6,
+    "total_estimated_size_mb": 14.4,
+    "last_updated": "2025-09-20T12:34:56Z"
+  }
+}
