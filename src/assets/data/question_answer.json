@@ -1,6 +1,10 @@
 {
     "suggestions": [
         {
+        "question": "What is the UAE latest stance in the national business council?",
+        "answer": "The UAE National Business Council recently announced several key initiatives: 1. Focus on sustainable economic development 2. Support for SMEs through digital transformation 3. Enhanced investment in renewable energy projects 4. Promotion of Emiratisation in private sector 5. New frameworks for business innovation and entrepreneurship 6. Strengthening international trade partnerships. The Council continues to work on policies that enhance the UAE's position as a global business hub."
+        },
+        {
         "question": "What are the top tourist attractions in Dubai?",
         "answer": "The top tourist attractions in Dubai include: 1. Burj Khalifa (world's tallest building) 2. Dubai Mall & Dubai Fountain 3. Palm Jumeirah 4. Dubai Marina 5. Burj Al Arab 6. Dubai Frame 7. Dubai Miracle Garden 8. Dubai Creek 9. Gold Souk 10. Atlantis Aquaventure Waterpark."
         },
@@ -284,6 +288,9 @@
         {
         "question": "What are the best shopping malls in Dubai?",
         "answer": "The best shopping malls in Dubai include The Dubai Mall (world's largest), Mall of the Emirates (with Ski Dubai), Ibn Battuta Mall (themed after ancient explorers), Dubai Marina Mall, and City Centre Mirdif."
+        },
+        {"question": "Who are you?",
+        "answer": "We are the Ali Robotics Team, dedicated to providing innovative AI solutions and enhancing user experiences through advanced technology."
         }
     ]
 }
