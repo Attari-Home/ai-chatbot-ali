@@ -17,6 +17,15 @@ interface QuickReply {
   query: string;
 }
 
+interface Suggestion {
+  question: string;
+  answer: string;
+}
+
+interface SuggestionResponse {
+  suggestions: Suggestion[];
+}
+
 @Component({
   selector: 'app-chatbot',
   standalone: true,
@@ -32,6 +41,30 @@ export class ChatbotComponent implements OnInit {
   messages: ChatMessage[] = [];
   isTyping = false;
   currentLanguage = 'en';
+  suggestions: Suggestion[] = [];
+
+  private async loadSuggestions() {
+    try {
+      const response = await fetch('assets/data/chatbot-suggestions.json');
+      const data: SuggestionResponse = await response.json();
+      this.suggestions = data.suggestions;
+    } catch (error) {
+      console.error('Error loading suggestions:', error);
+    }
+  }
+
+  private findSuggestion(query: string): Suggestion | undefined {
+    if (!this.suggestions.length) return undefined;
+    
+    // Convert query to lowercase for case-insensitive matching
+    const normalizedQuery = query.toLowerCase();
+    
+    // Find the best matching suggestion
+    return this.suggestions.find(suggestion => 
+      suggestion.question.toLowerCase().includes(normalizedQuery) ||
+      normalizedQuery.includes(suggestion.question.toLowerCase())
+    );
+  }
 
   // Quick reply suggestions
   quickReplies: QuickReply[] = [
@@ -43,12 +76,15 @@ export class ChatbotComponent implements OnInit {
     { text: '🍽️ Local Food', category: 'events', query: 'Recommend traditional UAE restaurants' }
   ];
 
-  ngOnInit() {
+  async ngOnInit() {
     this.metaService.updateMeta({
       title: 'UAE Information AI Chatbot - Ali Robotics Team',
       description: 'Get real-time information about UAE tourist spots, transport, events, culture, and emergency services using our AI-powered chatbot.',
       keywords: 'UAE, Dubai, chatbot, AI, tourist information, transport, emergency services, cultural events'
     });
+
+    // Load suggestions
+    await this.loadSuggestions();
 
     this.initializeForm();
     this.addWelcomeMessage();
@@ -136,7 +172,24 @@ What would you like to know about the UAE today?`,
     this.messages.push(userMessage);
   }
 
+  private addBotMessage(text: string, category: string = 'general') {
+    const botMessage: ChatMessage = {
+      id: this.generateId(),
+      text,
+      isUser: false,
+      timestamp: new Date(),
+      category: category as any
+    };
+    this.messages.push(botMessage);
+  }
+
   private async processUserQuery(query: string, category?: string) {
+    // First check if we have a matching suggestion
+    const suggestion = this.findSuggestion(query);
+    if (suggestion) {
+      this.addBotMessage(suggestion.answer, category || 'general');
+      return;
+    }
     this.isTyping = true;
     
     // Simulate AI processing delay

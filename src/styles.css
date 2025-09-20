@@ -98,6 +98,43 @@ img[src*="placeholder"] {
     @apply outline-none ring-2 ring-primary-500 ring-offset-2;
   }
   
+  /* Bubble Animation Classes */
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    animation: float 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .cursor-bubble {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 0, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.1s ease;
+    z-index: 9999;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+
+  /* Bubble sizes */
+  .bubble-sm { width: 20px; height: 20px; }
+  .bubble-md { width: 40px; height: 40px; }
+  .bubble-lg { width: 60px; height: 60px; }
+  
   /* Smooth transitions */
   * {
     @apply transition-colors duration-200;
