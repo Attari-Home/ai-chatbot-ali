@@ -73,6 +73,72 @@
         },
         {"question": "How can I contact your support team?",
         "answer": "You can contact our support team through the following channels: 1. Email: support@example.com 2. Phone: +971 123 4567 3. Live chat: Available on our website from 9 AM to 5 PM (UAE time)."
+        },
+        {"question": "Are there any upcoming events?",
+        "answer": "Yes, we have several upcoming events. Please check our website or subscribe to our newsletter for the latest updates."
+        },
+        {"question": "What are the best places to visit?",
+        "answer": "Some of the best places to visit in the UAE include: 1. Burj Khalifa 2. The Louvre Abu Dhabi 3. Sheikh Zayed Grand Mosque 4. Dubai Mall 5. Jebel Jais."
+        },
+        {"question": "Do you offer guided tours?",
+        "answer": "Yes, we offer guided tours to various attractions in the UAE. You can book these tours through our website or contact our customer service for more information."
+        },
+        {"question": "What's the best time to visit?",
+        "answer": "The best time to visit the UAE is during the cooler months, from November to March, when temperatures are more pleasant for outdoor activities and sightseeing."
+        },
+        {"question": "How can I contact your support team?",
+        "answer": "You can contact our support team through the following channels: 1. Email: support@example.com 2. Phone: +971 123 4567 3. Live chat: Available on our website from 9 AM to 5 PM (UAE time)."
+        },
+        {"question": "Are there any upcoming events?",
+        "answer": "Yes, we have several upcoming events. Please check our website or subscribe to our newsletter for the latest updates."
+        },
+        {
+          "question": "How do I join the robotics competition?",
+          "answer": "To join the robotics competition, visit our Events section and look for the registration form. Make sure to review the competition guidelines and requirements."
+        },
+        {
+          "question": "What are the best places to visit?",
+          "answer": "Popular tourist spots include historical sites, cultural centers, and natural attractions. Visit our Tourist Spots section for a comprehensive guide."
+        },
+        {
+          "question": "Do you offer guided tours?",
+          "answer": "Yes, we offer guided tours to various attractions. Check our Tourist Spots section for tour schedules and booking information."
+        },
+        {
+          "question": "What's the best time to visit?",
+          "answer": "The best time to visit depends on your preferences. Spring (March-May) and Fall (September-November) offer pleasant weather for outdoor activities."
+        },
+        {
+          "question": "How can I contact your support team?",
+          "answer": "You can reach our support team through the Contact section on our website, or use the chatbot for immediate assistance."
+        },
+        {
+          "question": "Are there any upcoming events?",
+          "answer": "Yes! Check our Events section for the latest updates on upcoming activities, festivals, and community gatherings."
+        },
+        {
+          "question": "How do I join the robotics competition?",
+          "answer": "To join the robotics competition, visit our Events section and look for the registration form. Make sure to review the competition guidelines and requirements."
+        },
+        {
+          "question": "What are the best places to visit?",
+          "answer": "Popular tourist spots include historical sites, cultural centers, and natural attractions. Visit our Tourist Spots section for a comprehensive guide."
+        },
+        {
+          "question": "Do you offer guided tours?",
+          "answer": "Yes, we offer guided tours to various attractions. Check our Tourist Spots section for tour schedules and booking information."
+        },
+        {
+          "question": "What's the best time to visit?",
+          "answer": "The best time to visit depends on your preferences. Spring (March-May) and Fall (September-November) offer pleasant weather for outdoor activities."
+        },
+        {
+          "question": "How can I contact your support team?",
+          "answer": "You can reach our support team through the Contact section on our website, or use the chatbot for immediate assistance."
+        },
+                {
+                  "question": "Are there any upcoming events?",
+                  "answer": "Yes! Check our Events section for the latest updates on upcoming activities, festivals, and community gatherings."
+                }
+            ]
         }
-    ]
-}
