@@ -291,6 +291,20 @@
         },
         {"question": "Who are you?",
         "answer": "We are the Ali Robotics Team, dedicated to providing innovative AI solutions and enhancing user experiences through advanced technology."
+    },        {"question": "Where is UAE?",
+        "answer": "The United Arab Emirates (UAE) is located in the southeastern part of the Arabian Peninsula, bordering Saudi Arabia to the south and Oman to the east and northeast. It has a coastline along the Persian Gulf to the north."
+    },            {"question": "Who are you?",
+        "answer": "We are the Ali Robotics Team, dedicated to providing innovative AI solutions and enhancing user experiences through advanced technology."
+    },        {"question": "Where is UAE?",
+            "answer": "The United Arab Emirates (UAE) is located in the southeastern part of the Arabian Peninsula, bordering Saudi Arabia to the south and Oman to the east and northeast. It has a coastline along the Persian Gulf to the north."
+        },
+        {
+            "question": "What is the famouse place in UAE?",
+            "answer": "Burj Khalifa: The tallest building in the world, located in Dubai."
+        },
+        {
+            "question": "What is the capital of UAE?",
+            "answer": "Abu Dhabi is the capital of the United Arab Emirates (UAE)."
         }
     ]
-}
+    }

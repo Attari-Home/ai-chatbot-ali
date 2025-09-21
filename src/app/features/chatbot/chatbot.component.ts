@@ -275,6 +275,8 @@ What would you like to know about the UAE today?`,
       this.isTyping = false;
       return;
     }
+    this.isTyping = true;
+    
     // Simulate AI processing delay
     setTimeout(() => {
       const response = this.generateAIResponse(query, category);
