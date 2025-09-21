@@ -468,16 +468,17 @@ I'm designed to provide the most helpful UAE information possible!`;
     this.addWelcomeMessage();
   }
 
-  onEnterKeyPress(event: KeyboardEvent): void {
+  onEnterKeyPress(event: Event): void {
+    const keyboardEvent = event as KeyboardEvent;
     console.log('Enter key pressed', {
-      shiftKey: event.shiftKey,
-      key: event.key,
+      shiftKey: keyboardEvent.shiftKey,
+      key: keyboardEvent.key,
       formValid: this.chatForm.valid,
       isTyping: this.isTyping
     });
-    
-    if (!event.shiftKey && event.key === 'Enter') {
-      event.preventDefault();
+
+    if (!keyboardEvent.shiftKey && keyboardEvent.key === 'Enter') {
+      keyboardEvent.preventDefault();
       if (this.chatForm.valid && !this.isTyping) {
         this.onSendMessage();
       }
