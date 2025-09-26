@@ -1,6 +1,5 @@
 <div class="contact-container">
   <div class="hero-section">
-    <h1>Contact Us</h1>
     <p>Get in touch with the ALI Robotics Team. We're here to answer your questions and help you get involved.</p>
   </div>
 
@@ -62,25 +61,36 @@
 
     <div class="contact-form-section">
       <h2>Send us a Message</h2>
-      <form class="contact-form">
+
+      <!-- Success/Error Messages -->
+      <div *ngIf="submitMessage" class="message" [ngClass]="{'success': submitMessageType === 'success', 'error': submitMessageType === 'error'}">
+        {{ submitMessage }}
+      </div>
+
+      <form class="contact-form" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="name">Full Name *</label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="name" [(ngModel)]="contactForm.formName" required #name="ngModel">
+          <div *ngIf="name.invalid && name.touched" class="error-message">Full name is required</div>
         </div>
 
         <div class="form-group">
           <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" [(ngModel)]="contactForm.formEmail" required email #emailField="ngModel">
+          <div *ngIf="emailField.invalid && emailField.touched" class="error-message">
+            <span *ngIf="emailField.errors?.['required']">Email address is required</span>
+            <span *ngIf="emailField.errors?.['email']">Please enter a valid email address</span>
+          </div>
         </div>
 
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone">
+          <input type="tel" id="phone" name="phone" [(ngModel)]="contactForm.formPhone">
         </div>
 
         <div class="form-group">
           <label for="subject">Subject *</label>
-          <select id="subject" name="subject" required>
+          <select id="subject" name="subject" [(ngModel)]="contactForm.formSubject" required #subjectField="ngModel">
             <option value="">Select a subject</option>
             <option value="general">General Inquiry</option>
             <option value="join">Join the Team</option>
@@ -89,19 +99,24 @@
             <option value="technical">Technical Support</option>
             <option value="other">Other</option>
           </select>
+          <div *ngIf="subjectField.invalid && subjectField.touched" class="error-message">Please select a subject</div>
         </div>
 
         <div class="form-group">
           <label for="message">Message *</label>
-          <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help you..."></textarea>
+          <textarea id="message" name="message" rows="6" [(ngModel)]="contactForm.formMessage" required #messageField="ngModel" placeholder="Tell us how we can help you..."></textarea>
+          <div *ngIf="messageField.invalid && messageField.touched" class="error-message">Message is required</div>
         </div>
 
         <div class="form-group checkbox-group">
-          <input type="checkbox" id="newsletter" name="newsletter">
+          <input type="checkbox" id="newsletter" name="newsletter" [(ngModel)]="contactForm.formNewsletter">
           <label for="newsletter">Subscribe to our newsletter for updates and robotics news</label>
         </div>
 
-        <button type="submit" class="submit-btn">Send Message</button>
+        <button type="submit" class="submit-btn" [disabled]="isSubmitting">
+          <span *ngIf="isSubmitting">Sending...</span>
+          <span *ngIf="!isSubmitting">Send Message</span>
+        </button>
       </form>
     </div>
   </div>

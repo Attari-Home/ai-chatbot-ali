@@ -24,7 +24,26 @@
   font-size: 1.3em;
   opacity: 0.9;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info p {
+  font-size: 1.1em;
+  margin: 0;
+}
+
+.contact-info a {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  color: #e0e0e0;
 }
 
 .mission-section, .story-section, .achievements-section, .values-section, .join-section {

@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MetaService } from '../../core/services/meta.service';
+import { WebSearchService, WebSearchResponse } from '../../core/services/web-search.service';
 
 interface ChatMessage {
   id: string;
@@ -40,10 +41,12 @@ interface SuggestionResponse {
 export class ChatbotComponent implements OnInit {
   private metaService = inject(MetaService);
   private fb = inject(FormBuilder);
+  private webSearchService = inject(WebSearchService);
 
   chatForm: FormGroup;
   messages: ChatMessage[] = [];
   isTyping = false;
+  isSearchingWeb = false;
   currentLanguage = 'en';
 
   constructor() {
@@ -166,7 +169,7 @@ export class ChatbotComponent implements OnInit {
 
   private getWelcomeMessage(): string {
     const messages = {
-      en: `🇦🇪 Welcome to UAE Information AI Chatbot! 
+      en: `🇦🇪 Welcome to UAE Information AI Chatbot!
 
 I'm here to help you discover the best of the United Arab Emirates. I can provide real-time information about:
 
@@ -174,7 +177,8 @@ I'm here to help you discover the best of the United Arab Emirates. I can provid
 🚗 Transportation and routes  
 🎉 Cultural events and festivals
 🚨 Emergency services and contacts
-🌤️ Weather and local recommendations
+🌤️ Weather and activity suggestions
+🔍 **Web search for UAE topics** - Ask me anything about UAE!
 
 What would you like to know about the UAE today?`,
       ar: `🇦🇪 أهلاً بك في روبوت الذكي لمعلومات الإمارات العربية المتحدة!
@@ -186,6 +190,7 @@ What would you like to know about the UAE today?`,
 🎉 الأحداث الثقافية والمهرجانات  
 🚨 الخدمات الطارئة وأرقام الاتصال
 🌤️ الطقس والتوصيات المحلية
+🔍 **البحث على الويب لمواضيع الإمارات** - اسألني عن أي شيء يتعلق بالإمارات!
 
 ماذا تريد أن تعرف عن الإمارات اليوم؟`,
       pa: `🇦🇪 UAE معلومات AI چیٹ بوٹ وچ خوش آمدید!
@@ -197,6 +202,7 @@ What would you like to know about the UAE today?`,
 🎉 ثقافتی واقعات تے تہوار
 🚨 ایمرجنسی سروسز تے رابطے
 🌤️ موسم تے مقامی سفارشات
+🔍 **UAE موضوعات لئی ویب سرچ** - UAE بارے کی جاننا چاہندے او؟
 
 اج تسیں UAE بارے کی جاننا چاہندے او؟`
     };
@@ -265,7 +271,7 @@ What would you like to know about the UAE today?`,
 
   private async processUserQuery(query: string, category?: string) {
     this.isTyping = true;
-    
+
     // First check if we have a matching suggestion
     const suggestion = this.findSuggestion(query);
     if (suggestion) {
@@ -275,9 +281,37 @@ What would you like to know about the UAE today?`,
       this.isTyping = false;
       return;
     }
+
+    // Check if query is UAE-related and should trigger web search
+    // Skip web search for very short queries, greetings, or single words
+    const trimmedQuery = query.trim();
+    const isShortQuery = trimmedQuery.split(/\s+/).length < 2;
+    const isGreeting = /^(hi|hello|hey|howdy|greetings?|good\s+(morning|afternoon|evening)|thanks?|thank you|bye|goodbye|see you)/i.test(trimmedQuery);
+
+    if (!isShortQuery && !isGreeting) {
+      this.isSearchingWeb = true;
+      this.isTyping = false; // Turn off typing indicator while showing search indicator
+
+      try {
+        // Use UAE-specific search for UAE queries, general search for others
+        const searchResponse = this.webSearchService.isUAERelated(query)
+          ? await this.webSearchService.searchWeb(query)
+          : await this.webSearchService.searchWebGeneral(query);
+
+        const formattedResults = this.webSearchService.formatSearchResults(searchResponse);
+        this.addBotMessage(formattedResults, 'general');
+      } catch (error) {
+        console.error('Web search failed:', error);
+        this.addBotMessage('I apologize, but I\'m having trouble searching the web right now. Let me provide you with some general information instead.\n\n' + this.getGeneralResponse(), 'general');
+      } finally {
+        this.isSearchingWeb = false;
+      }
+      return;
+    }
+
     this.isTyping = true;
-    
-    // Simulate AI processing delay
+
+    // Simulate AI processing delay for non-UAE queries
     setTimeout(() => {
       const response = this.generateAIResponse(query, category);
       const botMessage: ChatMessage = {

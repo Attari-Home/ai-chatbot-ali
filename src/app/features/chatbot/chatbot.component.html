@@ -87,6 +87,23 @@
             </div>
           </div>
         </div>
+
+        <!-- Web Search Indicator -->
+        <div *ngIf="isSearchingWeb" class="flex justify-start">
+          <div class="max-w-xs px-4 py-2 bg-blue-50 text-blue-900 rounded-2xl rounded-bl-md border border-blue-200">
+            <div class="flex items-center space-x-2">
+              <span class="text-lg">🔍</span>
+              <div class="flex-1">
+                <p class="text-sm">Searching the web for UAE information...</p>
+                <div class="flex space-x-1 mt-1">
+                  <div class="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
+                  <div class="w-2 h-2 bg-blue-400 rounded-full animate-bounce bounce-delay-1"></div>
+                  <div class="w-2 h-2 bg-blue-400 rounded-full animate-bounce bounce-delay-2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Quick Replies -->
