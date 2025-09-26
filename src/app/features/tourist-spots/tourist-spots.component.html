@@ -35,8 +35,8 @@
         <!-- Spot Image -->
         <div class="relative h-64 overflow-hidden">
           <img 
-            [src]="spot.images[0]?.source_url || 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=300&fit=crop&crop=center'"
-            [alt]="spot.images[0]?.alt_text || spot.name"
+            [src]="(spot.images && spot.images.length > 0) ? spot.images[0].source_url : 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=300&fit=crop&crop=center'"
+            [alt]="(spot.images && spot.images.length > 0) ? spot.images[0].alt_text : spot.name"
             class="w-full h-full object-cover"
             loading="lazy"
             (error)="onImageError($event)">
@@ -66,7 +66,7 @@
 
           <!-- Rating and Actions -->
           <div class="flex justify-between items-center">
-            <div class="flex items-center">
+            <div class="flex items-center" *ngIf="spot.reviews">
               <div class="flex text-yellow-400 mr-2">
                 <span *ngFor="let star of getStarArray(spot.reviews.average_rating)">
                   {{ star ? '★' : '☆' }}
@@ -107,8 +107,8 @@
       <!-- Modal Header with Image -->
       <div class="relative h-80 overflow-hidden rounded-t-xl">
         <img 
-          [src]="selectedSpot.images[0]?.source_url || 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=600&fit=crop&crop=center'"
-          [alt]="selectedSpot.images[0]?.alt_text || selectedSpot.name"
+          [src]="(selectedSpot.images && selectedSpot.images.length > 0) ? selectedSpot.images[0].source_url : 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=600&fit=crop&crop=center'"
+          [alt]="(selectedSpot.images && selectedSpot.images.length > 0) ? selectedSpot.images[0].alt_text : selectedSpot.name"
           class="w-full h-full object-cover"
           (error)="onImageError($event)">
         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
@@ -133,7 +133,7 @@
             <div class="space-y-2 text-sm">
               <div><strong>Hours:</strong> {{ selectedSpot.opening_hours }}</div>
               <div><strong>Entry Fee:</strong> {{ selectedSpot.entry_fee }}</div>
-              <div><strong>Duration:</strong> {{ selectedSpot.practical_info.estimated_visit_duration }}</div>
+              <div *ngIf="selectedSpot.practical_info?.estimated_visit_duration"><strong>Duration:</strong> {{ selectedSpot.practical_info!.estimated_visit_duration }}</div>
               <div><strong>Best Time:</strong> {{ selectedSpot.best_time_to_visit }}</div>
             </div>
           </div>
@@ -143,9 +143,9 @@
             <h3 class="font-semibold text-gray-800 mb-3">🚗 Getting There</h3>
             <div class="space-y-2 text-sm">
               <div><strong>Address:</strong> {{ selectedSpot.address }}</div>
-              <div><strong>Parking:</strong> {{ selectedSpot.practical_info.parking }}</div>
-              <div><strong>Accessibility:</strong> {{ selectedSpot.practical_info.accessibility }}</div>
-              <div><strong>Transport:</strong> {{ selectedSpot.practical_info.public_transport.join(', ') }}</div>
+              <div *ngIf="selectedSpot.practical_info?.parking"><strong>Parking:</strong> {{ selectedSpot.practical_info!.parking }}</div>
+              <div *ngIf="selectedSpot.practical_info?.accessibility"><strong>Accessibility:</strong> {{ selectedSpot.practical_info!.accessibility }}</div>
+              <div *ngIf="selectedSpot.practical_info?.public_transport && selectedSpot.practical_info!.public_transport.length > 0"><strong>Transport:</strong> {{ selectedSpot.practical_info!.public_transport.join(', ') }}</div>
             </div>
           </div>
         </div>
@@ -163,10 +163,10 @@
         </div>
 
         <!-- Nearby Attractions -->
-        <div class="mb-6" *ngIf="selectedSpot.practical_info.nearby_attractions.length > 0">
+        <div class="mb-6" *ngIf="selectedSpot.practical_info?.nearby_attractions && selectedSpot.practical_info!.nearby_attractions.length > 0">
           <h3 class="font-semibold text-gray-800 mb-3">🌟 Nearby Attractions</h3>
           <div class="text-sm text-gray-600">
-            {{ selectedSpot.practical_info.nearby_attractions.join(' • ') }}
+            {{ selectedSpot.practical_info!.nearby_attractions.join(' • ') }}
           </div>
         </div>
 
@@ -185,8 +185,8 @@
         </div>
 
         <!-- Image Attribution -->
-        <div class="mt-6 pt-4 border-t border-gray-200 text-xs text-gray-500">
-          📷 {{ selectedSpot.images[0]?.attribution }}
+        <div class="mt-6 pt-4 border-t border-gray-200 text-xs text-gray-500" *ngIf="selectedSpot.images && selectedSpot.images.length > 0 && selectedSpot.images[0].attribution">
+          📷 {{ selectedSpot.images[0].attribution }}
         </div>
       </div>
     </div>

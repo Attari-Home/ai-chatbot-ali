@@ -28,12 +28,12 @@ interface TouristSpot {
     alt_text: string;
     caption: string;
   }>;
-  reviews: {
+  reviews?: {
     total_count: number;
     average_rating: number;
     rating_distribution: { [key: string]: number };
   };
-  practical_info: {
+  practical_info?: {
     estimated_visit_duration: string;
     difficulty_level: string;
     accessibility: string;
@@ -41,6 +41,13 @@ interface TouristSpot {
     public_transport: string[];
     nearby_attractions: string[];
   };
+  sources?: Array<{
+    type: string;
+    url: string;
+    notes?: string;
+  }>;
+  scrape_timestamp?: string;
+  notes?: string;
 }
 
 @Component({
@@ -56,7 +63,7 @@ export class TouristSpotsComponent implements OnInit {
   error: string | null = null;
   selectedSpot: TouristSpot | null = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   ngOnInit() {
     this.loadTouristSpots();
