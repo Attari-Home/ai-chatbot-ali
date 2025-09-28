@@ -57,9 +57,6 @@ export class PrivacyService {
     updatedConsents.push(completeConsentData);
     
     localStorage.setItem(this.CONSENT_STORAGE_KEY, JSON.stringify(updatedConsents));
-    
-    // Log consent action for audit trail
-    this.logConsentAction('granted', completeConsentData);
   }
 
   /**
@@ -75,9 +72,6 @@ export class PrivacyService {
     });
 
     localStorage.setItem(this.CONSENT_STORAGE_KEY, JSON.stringify(updatedConsents));
-    
-    // Log revocation for audit trail
-    this.logConsentAction('revoked', { studentName, consentType });
   }
 
   /**
@@ -215,23 +209,6 @@ export class PrivacyService {
       privacyNoticeUrl: '/privacy-policy',
       dataRetentionPeriod: '2 years after graduation or team departure'
     };
-  }
-
-  /**
-   * Log consent actions for audit trail
-   */
-  private logConsentAction(action: 'granted' | 'revoked', data: any): void {
-    const logEntry = {
-      action,
-      data,
-      timestamp: new Date().toISOString(),
-      complianceVersion: this.GDPR_COMPLIANCE_VERSION
-    };
-
-    console.log('Privacy Audit Log:', logEntry);
-    
-    // In production, this would send to a secure logging service
-    // this.sendToAuditLog(logEntry);
   }
 
   /**

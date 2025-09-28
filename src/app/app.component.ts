@@ -20,9 +20,9 @@ export class AppComponent implements OnInit, OnDestroy {
   private readonly BUBBLE_COUNT = 20;
 
   constructor(
-    private metaService: MetaService,
-    private performanceService: PerformanceService,
-    private themeService: ThemeService
+    private readonly metaService: MetaService,
+    private readonly performanceService: PerformanceService,
+    private readonly themeService: ThemeService
   ) {}
 
   ngOnInit(): void {
@@ -99,7 +99,15 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private createBubble(): void {
     const bubble = document.createElement('div');
-    const size = Math.random() > 0.5 ? 'bubble-sm' : Math.random() > 0.5 ? 'bubble-md' : 'bubble-lg';
+    const rand = Math.random();
+    let size: string;
+    if (rand < 0.33) {
+      size = 'bubble-sm';
+    } else if (rand < 0.66) {
+      size = 'bubble-md';
+    } else {
+      size = 'bubble-lg';
+    }
     bubble.className = `bubble ${size}`;
     
     // Random position

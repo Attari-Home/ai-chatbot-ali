@@ -9,10 +9,10 @@ export type Theme = 'light' | 'dark';
 })
 export class ThemeService {
   private readonly THEME_KEY = 'ali-robotics-theme';
-  private currentThemeSubject = new BehaviorSubject<Theme>('light');
+  private readonly currentThemeSubject = new BehaviorSubject<Theme>('light');
   public currentTheme$: Observable<Theme> = this.currentThemeSubject.asObservable();
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(@Inject(PLATFORM_ID) private readonly platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
       this.initializeTheme();
     }

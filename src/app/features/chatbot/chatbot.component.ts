@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MetaService } from '../../core/services/meta.service';
-import { WebSearchService, WebSearchResponse } from '../../core/services/web-search.service';
+import { WebSearchService } from '../../core/services/web-search.service';
 import { ThemeService } from '../../core/services/theme.service';
 
 interface ChatMessage {
@@ -40,10 +40,10 @@ interface SuggestionResponse {
   styleUrl: './chatbot.component.css'
 })
 export class ChatbotComponent implements OnInit {
-  private metaService = inject(MetaService);
-  private fb = inject(FormBuilder);
-  private webSearchService = inject(WebSearchService);
-  private themeService = inject(ThemeService);
+  private readonly metaService = inject(MetaService);
+  private readonly fb = inject(FormBuilder);
+  private readonly webSearchService = inject(WebSearchService);
+  private readonly themeService = inject(ThemeService);
 
   chatForm: FormGroup;
   messages: ChatMessage[] = [];
@@ -68,7 +68,6 @@ export class ChatbotComponent implements OnInit {
       const response = await fetch('assets/data/question_answer.json');
       const data: SuggestionResponse = await response.json();
       this.suggestions = data.suggestions;
-      console.log('Loaded suggestions:', this.suggestions); // Debug log
     } catch (error) {
       console.error('Error loading suggestions:', error);
     }
@@ -123,43 +122,19 @@ export class ChatbotComponent implements OnInit {
     { text: '🍽️ Local Food', category: 'events', query: 'Recommend traditional UAE restaurants' }
   ];
 
-  async ngOnInit() {
+  ngOnInit() {
     this.metaService.updateMeta({
       title: 'UAE Information AI Chatbot - Ali Robotics Team',
       description: 'Get real-time information about UAE tourist spots, transport, events, culture, and emergency services using our AI-powered chatbot.',
       keywords: 'UAE, Dubai, chatbot, AI, tourist information, transport, emergency services, cultural events'
     });
 
-    // Load suggestions
-    try {
-      await this.loadSuggestions();
-      console.log('Suggestions loaded successfully');
-    } catch (error) {
+    // Load suggestions asynchronously
+    this.loadSuggestions().catch(error => {
       console.error('Error loading suggestions:', error);
-    }
-
-    // Monitor form state
-    this.chatForm.valueChanges.subscribe(val => {
-      console.log('Form value changed:', val);
     });
 
-    this.initializeForm();
     this.addWelcomeMessage();
-  }
-
-  private initializeForm() {
-    this.chatForm = this.fb.group({
-      message: ['', [Validators.required, Validators.minLength(1)]]
-    });
-
-    // Debug: Monitor form changes
-    this.chatForm.valueChanges.subscribe(val => {
-      console.log('Form value changed:', val);
-    });
-
-    this.chatForm.statusChanges.subscribe(status => {
-      console.log('Form status changed:', status);
-    });
   }
 
   private addWelcomeMessage() {
@@ -216,36 +191,20 @@ What would you like to know about the UAE today?`,
   }
 
   onSendMessage() {
-    console.log('Send button clicked');
-    console.log('Form status:', this.chatForm.status);
-    console.log('Form value:', this.chatForm.value);
-    console.log('Is typing:', this.isTyping);
-    
     const messageControl = this.chatForm.get('message');
-    console.log('Message control:', {
-      value: messageControl?.value,
-      valid: messageControl?.valid,
-      errors: messageControl?.errors,
-      dirty: messageControl?.dirty,
-      touched: messageControl?.touched
-    });
-    
+
     if (this.chatForm.valid) {
       const messageText = messageControl?.value;
-      console.log('Valid message text:', messageText);
-      
-      if (messageText && messageText.trim()) {
+
+      if (messageText?.trim()) {
         try {
           this.addUserMessage(messageText.trim());
           this.processUserQuery(messageText.trim());
           this.chatForm.reset();
-          console.log('Message processed successfully');
         } catch (error) {
           console.error('Error processing message:', error);
         }
       }
-    } else {
-      console.log('Form validation errors:', this.chatForm.errors);
     }
   }
 
@@ -489,7 +448,15 @@ I'm designed to provide the most helpful UAE information possible!`;
   switchLanguage(lang: string) {
     this.currentLanguage = lang;
     // In a real implementation, this would trigger translation of existing messages
-    this.addSystemMessage(`Language switched to ${lang === 'en' ? 'English' : lang === 'ar' ? 'العربية' : 'ਪੰਜਾਬੀ'}`);
+    let languageName: string;
+    if (lang === 'en') {
+      languageName = 'English';
+    } else if (lang === 'ar') {
+      languageName = 'العربية';
+    } else {
+      languageName = 'ਪੰਜਾਬੀ';
+    }
+    this.addSystemMessage(`Language switched to ${languageName}`);
   }
 
   private addSystemMessage(text: string) {
@@ -510,12 +477,6 @@ I'm designed to provide the most helpful UAE information possible!`;
 
   onEnterKeyPress(event: Event): void {
     const keyboardEvent = event as KeyboardEvent;
-    console.log('Enter key pressed', {
-      shiftKey: keyboardEvent.shiftKey,
-      key: keyboardEvent.key,
-      formValid: this.chatForm.valid,
-      isTyping: this.isTyping
-    });
 
     if (!keyboardEvent.shiftKey && keyboardEvent.key === 'Enter') {
       keyboardEvent.preventDefault();
@@ -526,6 +487,6 @@ I'm designed to provide the most helpful UAE information possible!`;
   }
 
   private generateId(): string {
-    return 'msg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    return 'msg_' + Date.now() + '_' + Math.random().toString(36).substring(2, 11);
   }
 }

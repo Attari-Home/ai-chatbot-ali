@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ImageOptimizationService } from '../../core/services/image-optimization.service';
@@ -11,7 +11,7 @@ import { ThemeService } from '../../core/services/theme.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   content = {
     hero: {
       title: 'Welcome to ALI Robotics',
@@ -86,7 +86,7 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor(private imageService: ImageOptimizationService, private themeService: ThemeService) { }
+  constructor(private readonly imageService: ImageOptimizationService, private readonly themeService: ThemeService) { }
 
   get isDarkTheme(): boolean {
     return this.themeService.isDarkTheme();
@@ -100,9 +100,6 @@ export class HomeComponent implements OnInit {
   // Get optimized image URL
   getImageUrl(url: string, category: 'logo' | 'project' | 'news' = 'project'): string {
     return this.imageService.getOptimizedImageUrl(url, category);
-  }
-
-  ngOnInit(): void {
   }
 
 }

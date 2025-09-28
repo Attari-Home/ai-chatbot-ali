@@ -19,9 +19,9 @@ export class ParentalConsentComponent implements OnInit {
   submissionError = '';
 
   constructor(
-    private fb: FormBuilder,
-    private privacyService: PrivacyService,
-    private metaService: MetaService
+    private readonly fb: FormBuilder,
+    private readonly privacyService: PrivacyService,
+    private readonly metaService: MetaService
   ) {}
 
   ngOnInit(): void {
@@ -79,6 +79,7 @@ export class ParentalConsentComponent implements OnInit {
         this.submissionSuccess = true;
         this.isSubmitting = false;
       } catch (error) {
+        console.error('Consent submission error:', error);
         this.submissionError = 'Failed to submit consent form. Please try again.';
         this.isSubmitting = false;
       }
@@ -101,15 +102,6 @@ export class ParentalConsentComponent implements OnInit {
       };
 
       this.privacyService.recordConsent(consentData);
-    });
-
-    // Log form submission
-    console.log('Parental consent form submitted:', {
-      studentName: formData.studentName,
-      parentName: formData.parentName,
-      submissionDate: new Date().toISOString(),
-      consentsGranted: formData.consents.filter((c: any) => c.granted).length,
-      totalConsents: formData.consents.length
     });
   }
 

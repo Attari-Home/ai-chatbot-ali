@@ -21,7 +21,7 @@
         
         <!-- Navigation and Theme Toggle -->
         <div class="hidden md:flex items-center space-x-8">
-          <nav class="flex space-x-8">
+          <nav class="flex space-x-8" aria-label="Main navigation">
             <a routerLink="/" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">Home</a>
             <a routerLink="/chatbot" class="text-blue-600 hover:text-blue-700 px-3 py-2 text-sm font-bold bg-blue-50 rounded-md dark:text-blue-400 dark:bg-blue-900/20 dark:hover:bg-blue-900/30 transition-colors duration-200">🤖 AI Chatbot</a>
             <a routerLink="/tourist-spots" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">Tourist Spots</a>
@@ -114,8 +114,7 @@
               fill="none" 
               viewBox="0 0 24 24" 
               stroke="currentColor"
-              aria-hidden="true"
-              role="img">
+              aria-hidden="true">
               <path 
                 stroke-linecap="round" 
                 stroke-linejoin="round" 
@@ -129,10 +128,9 @@
     </div>
 
     <!-- Mobile menu -->
-    <div 
+    <nav 
       class="md:hidden" 
       [class.hidden]="!isMobileMenuOpen"
-      role="navigation"
       aria-label="Mobile navigation">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-sm border-t border-gray-200 dark:bg-gray-900/95 dark:border-gray-700">
         <a routerLink="/" 
@@ -161,7 +159,7 @@
           class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200" 
           routerLinkActive="bg-gray-50 dark:bg-gray-800">Contact</a>
       </div>
-    </div>
+    </nav>
   </header>
 
   <!-- Main Content -->
