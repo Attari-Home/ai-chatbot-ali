@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MetaService } from '../../core/services/meta.service';
 import { WebSearchService, WebSearchResponse } from '../../core/services/web-search.service';
+import { ThemeService } from '../../core/services/theme.service';
 
 interface ChatMessage {
   id: string;
@@ -42,12 +43,17 @@ export class ChatbotComponent implements OnInit {
   private metaService = inject(MetaService);
   private fb = inject(FormBuilder);
   private webSearchService = inject(WebSearchService);
+  private themeService = inject(ThemeService);
 
   chatForm: FormGroup;
   messages: ChatMessage[] = [];
   isTyping = false;
   isSearchingWeb = false;
   currentLanguage = 'en';
+
+  get isDarkTheme(): boolean {
+    return this.themeService.isDarkTheme();
+  }
 
   constructor() {
     // Initialize form in constructor

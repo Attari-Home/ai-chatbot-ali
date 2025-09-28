@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import { MetaService } from './core/services/meta.service';
 import { PerformanceService } from './core/services/performance.service';
+import { ThemeService } from './core/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private metaService: MetaService,
-    private performanceService: PerformanceService
+    private performanceService: PerformanceService,
+    private themeService: ThemeService
   ) {}
 
   ngOnInit(): void {
@@ -75,6 +77,14 @@ export class AppComponent implements OnInit, OnDestroy {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
+
+  get isDarkTheme(): boolean {
+    return this.themeService.isDarkTheme();
   }
 
   handleImageError(event: Event): void {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ImageOptimizationService } from '../../core/services/image-optimization.service';
+import { ThemeService } from '../../core/services/theme.service';
 
 @Component({
   selector: 'app-home',
@@ -85,7 +86,11 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor(private imageService: ImageOptimizationService) { }
+  constructor(private imageService: ImageOptimizationService, private themeService: ThemeService) { }
+
+  get isDarkTheme(): boolean {
+    return this.themeService.isDarkTheme();
+  }
 
   // Handle image load errors
   onImageError(event: Event, category: 'logo' | 'project' | 'news' = 'project'): void {

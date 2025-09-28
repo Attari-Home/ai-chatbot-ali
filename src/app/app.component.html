@@ -4,7 +4,7 @@
   <div class="bubble-container fixed inset-0 pointer-events-none z-0"></div>
   
   <!-- Header -->
-  <header class="bg-white/90 backdrop-blur-sm shadow-sm border-b border-gray-200 relative z-10">
+  <header class="bg-white/90 backdrop-blur-sm shadow-sm border-b border-gray-200 relative z-10 dark:bg-gray-900/90 dark:border-gray-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
@@ -16,26 +16,97 @@
             (error)="handleImageError($event)"
             loading="eager"
             decoding="async">
-          <span class="ml-2 text-xl font-bold text-gray-900">Ali Robotics</span>
+          <span class="ml-2 text-xl font-bold text-gray-900 dark:text-white">Ali Robotics</span>
         </div>
         
-        <!-- Navigation -->
-        <nav class="hidden md:flex space-x-8">
-          <a routerLink="/" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Home</a>
-          <a routerLink="/chatbot" class="text-blue-600 hover:text-blue-700 px-3 py-2 text-sm font-bold bg-blue-50 rounded-md">🤖 AI Chatbot</a>
-          <a routerLink="/tourist-spots" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Tourist Spots</a>
-          <a routerLink="/transport" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Transport</a>
-          <a routerLink="/events" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Events</a>
-          <a routerLink="/emergency" class="text-red-600 hover:text-red-700 px-3 py-2 text-sm font-medium">Emergency</a>
-          <a routerLink="/about" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">About</a>
-          <a routerLink="/contact" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Contact</a>
-        </nav>
-        
-        <!-- Mobile menu button -->
-        <div class="md:hidden">
+        <!-- Navigation and Theme Toggle -->
+        <div class="hidden md:flex items-center space-x-8">
+          <nav class="flex space-x-8">
+            <a routerLink="/" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">Home</a>
+            <a routerLink="/chatbot" class="text-blue-600 hover:text-blue-700 px-3 py-2 text-sm font-bold bg-blue-50 rounded-md dark:text-blue-400 dark:bg-blue-900/20 dark:hover:bg-blue-900/30 transition-colors duration-200">🤖 AI Chatbot</a>
+            <a routerLink="/tourist-spots" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">Tourist Spots</a>
+            <a routerLink="/transport" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">Transport</a>
+            <a routerLink="/events" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">Events</a>
+            <a routerLink="/emergency" class="text-red-600 hover:text-red-700 px-3 py-2 text-sm font-medium dark:text-red-400 dark:hover:text-red-300 transition-colors duration-200">Emergency</a>
+            <a routerLink="/about" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">About</a>
+            <a routerLink="/contact" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">Contact</a>
+          </nav>
+          
+          <!-- Theme Toggle Button -->
           <button 
             type="button" 
-            class="text-gray-700 hover:text-primary-600"
+            class="p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-primary-400 dark:hover:bg-gray-800 transition-colors duration-200"
+            (click)="toggleTheme()"
+            aria-label="Toggle theme">
+            <svg 
+              class="h-5 w-5" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+              *ngIf="!isDarkTheme">
+              <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" 
+              />
+            </svg>
+            <svg 
+              class="h-5 w-5" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+              *ngIf="isDarkTheme">
+              <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" 
+              />
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Theme Toggle & Mobile menu button -->
+        <div class="flex items-center space-x-2 md:hidden">
+          <!-- Theme Toggle Button -->
+          <button 
+            type="button" 
+            class="p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-primary-400 dark:hover:bg-gray-800 transition-colors duration-200"
+            (click)="toggleTheme()"
+            aria-label="Toggle theme">
+            <svg 
+              class="h-5 w-5" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+              *ngIf="!isDarkTheme">
+              <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" 
+              />
+            </svg>
+            <svg 
+              class="h-5 w-5" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+              *ngIf="isDarkTheme">
+              <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" 
+              />
+            </svg>
+          </button>
+          
+          <!-- Mobile menu button -->
+          <button 
+            type="button" 
+            class="p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-primary-400 dark:hover:bg-gray-800"
             aria-label="Open main menu"
             (click)="toggleMobileMenu()">
             <svg 
@@ -63,32 +134,32 @@
       [class.hidden]="!isMobileMenuOpen"
       role="navigation"
       aria-label="Mobile navigation">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-sm border-t border-gray-200 dark:bg-gray-900/95 dark:border-gray-700">
         <a routerLink="/" 
-          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" 
-          routerLinkActive="bg-gray-50"
+          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200" 
+          routerLinkActive="bg-gray-50 dark:bg-gray-800"
           [routerLinkActiveOptions]="{exact: true}">Home</a>
         <a routerLink="/chatbot" 
-          class="text-blue-600 hover:text-blue-700 block px-3 py-2 text-base font-medium" 
-          routerLinkActive="bg-blue-50">🤖 AI Chatbot</a>
+          class="text-blue-600 hover:text-blue-700 block px-3 py-2 text-base font-medium dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-200" 
+          routerLinkActive="bg-blue-50 dark:bg-blue-900/20">🤖 AI Chatbot</a>
         <a routerLink="/tourist-spots" 
-          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" 
-          routerLinkActive="bg-gray-50">Tourist Spots</a>
+          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200" 
+          routerLinkActive="bg-gray-50 dark:bg-gray-800">Tourist Spots</a>
         <a routerLink="/transport" 
-          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" 
-          routerLinkActive="bg-gray-50">Transport</a>
+          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200" 
+          routerLinkActive="bg-gray-50 dark:bg-gray-800">Transport</a>
         <a routerLink="/events" 
-          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" 
-          routerLinkActive="bg-gray-50">Events</a>
+          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200" 
+          routerLinkActive="bg-gray-50 dark:bg-gray-800">Events</a>
         <a routerLink="/emergency" 
-          class="text-red-600 hover:text-red-700 block px-3 py-2 text-base font-medium" 
-          routerLinkActive="bg-red-50">Emergency</a>
+          class="text-red-600 hover:text-red-700 block px-3 py-2 text-base font-medium dark:text-red-400 dark:hover:text-red-300 transition-colors duration-200" 
+          routerLinkActive="bg-red-50 dark:bg-red-900/20">Emergency</a>
         <a routerLink="/about" 
-          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" 
-          routerLinkActive="bg-gray-50">About</a>
+          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200" 
+          routerLinkActive="bg-gray-50 dark:bg-gray-800">About</a>
         <a routerLink="/contact" 
-          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium" 
-          routerLinkActive="bg-gray-50">Contact</a>
+          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200" 
+          routerLinkActive="bg-gray-50 dark:bg-gray-800">Contact</a>
       </div>
     </div>
   </header>
@@ -99,7 +170,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white">
+  <footer class="bg-gray-900 text-white dark:bg-gray-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <!-- About -->
@@ -118,10 +189,10 @@
         <div>
           <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">Quick Links</h3>
           <ul class="space-y-2">
-            <li><a routerLink="/about" class="text-gray-300 hover:text-white">About Us</a></li>
-            <li><a routerLink="/team" class="text-gray-300 hover:text-white">Our Team</a></li>
-            <li><a routerLink="/" class="text-gray-300 hover:text-white">Projects</a></li>
-            <li><a routerLink="/events" class="text-gray-300 hover:text-white">Events</a></li>
+            <li><a routerLink="/about" class="text-gray-300 hover:text-white transition-colors duration-200">About Us</a></li>
+            <li><a routerLink="/team" class="text-gray-300 hover:text-white transition-colors duration-200">Our Team</a></li>
+            <li><a routerLink="/" class="text-gray-300 hover:text-white transition-colors duration-200">Projects</a></li>
+            <li><a routerLink="/events" class="text-gray-300 hover:text-white transition-colors duration-200">Events</a></li>
           </ul>
         </div>
         

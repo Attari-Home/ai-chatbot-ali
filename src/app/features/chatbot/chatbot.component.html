@@ -1,7 +1,7 @@
 <!-- UAE Information AI Chatbot Interface -->
-<div class="min-h-screen bg-gradient-to-br from-blue-50 to-amber-50">
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-amber-50 dark:from-gray-900 dark:to-gray-800">
   <!-- Header -->
-  <div class="bg-white shadow-sm border-b border-gray-200">
+  <div class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-3">
@@ -9,8 +9,8 @@
             <span class="text-white font-bold text-lg">🤖</span>
           </div>
           <div>
-            <h1 class="text-xl font-bold text-gray-900">UAE Information AI Chatbot</h1>
-            <p class="text-sm text-gray-600">Competition Entry - Ali Robotics Team</p>
+            <h1 class="text-xl font-bold text-gray-900 dark:text-white">UAE Information AI Chatbot</h1>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Competition Entry - Ali Robotics Team</p>
           </div>
         </div>
         
@@ -18,25 +18,25 @@
         <div class="flex items-center space-x-2">
           <button 
             (click)="switchLanguage('en')"
-            [class]="currentLanguage === 'en' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'"
-            class="px-3 py-1 rounded-full text-sm font-medium transition-colors">
+            [class]="currentLanguage === 'en' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'"
+            class="px-3 py-1 rounded-full text-sm font-medium transition-colors hover:bg-blue-500 dark:hover:bg-blue-600">
             EN
           </button>
           <button 
             (click)="switchLanguage('ar')"
-            [class]="currentLanguage === 'ar' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'"
-            class="px-3 py-1 rounded-full text-sm font-medium transition-colors">
+            [class]="currentLanguage === 'ar' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'"
+            class="px-3 py-1 rounded-full text-sm font-medium transition-colors hover:bg-blue-500 dark:hover:bg-blue-600">
             عربي
           </button>
           <button 
             (click)="switchLanguage('pa')"
-            [class]="currentLanguage === 'pa' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'"
-            class="px-3 py-1 rounded-full text-sm font-medium transition-colors">
+            [class]="currentLanguage === 'pa' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'"
+            class="px-3 py-1 rounded-full text-sm font-medium transition-colors hover:bg-blue-500 dark:hover:bg-blue-600">
             ਪੰਜਾਬੀ
           </button>
           <button 
             (click)="clearChat()"
-            class="ml-4 px-3 py-1 bg-red-500 text-white rounded-full text-sm hover:bg-red-600 transition-colors"
+            class="ml-4 px-3 py-1 bg-red-500 text-white rounded-full text-sm hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 transition-colors"
             title="Clear Chat">
             🗑️
           </button>
@@ -47,7 +47,7 @@
 
   <!-- Chat Container -->
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <div class="bg-white rounded-xl shadow-lg overflow-hidden h-[calc(100vh-200px)] flex flex-col">
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden h-[calc(100vh-200px)] flex flex-col">
       
       <!-- Messages Area -->
       <div class="flex-1 overflow-y-auto p-6 space-y-4" #messagesContainer>
@@ -63,12 +63,12 @@
           
           <!-- Bot Message -->
           <div *ngIf="!message.isUser" 
-               class="max-w-xs lg:max-w-2xl px-4 py-2 bg-gray-100 text-gray-900 rounded-2xl rounded-bl-md">
+               class="max-w-xs lg:max-w-2xl px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-2xl rounded-bl-md">
             <div class="flex items-start space-x-2">
               <span class="text-lg">🤖</span>
               <div class="flex-1">
                 <p class="text-sm whitespace-pre-wrap leading-relaxed">{{ message.text }}</p>
-                <p class="text-xs text-gray-500 mt-1">{{ message.timestamp | date:'HH:mm' }}</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">{{ message.timestamp | date:'HH:mm' }}</p>
               </div>
             </div>
           </div>
@@ -76,13 +76,13 @@
 
         <!-- Typing Indicator -->
         <div *ngIf="isTyping" class="flex justify-start">
-          <div class="max-w-xs px-4 py-2 bg-gray-100 text-gray-900 rounded-2xl rounded-bl-md">
+          <div class="max-w-xs px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-2xl rounded-bl-md">
             <div class="flex items-center space-x-2">
               <span class="text-lg">🤖</span>
               <div class="flex space-x-1">
-                <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce bounce-delay-1"></div>
-                <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce bounce-delay-2"></div>
+                <div class="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"></div>
+                <div class="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce bounce-delay-1"></div>
+                <div class="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce bounce-delay-2"></div>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@
 
         <!-- Web Search Indicator -->
         <div *ngIf="isSearchingWeb" class="flex justify-start">
-          <div class="max-w-xs px-4 py-2 bg-blue-50 text-blue-900 rounded-2xl rounded-bl-md border border-blue-200">
+          <div class="max-w-xs px-4 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-900 dark:text-blue-100 rounded-2xl rounded-bl-md border border-blue-200 dark:border-blue-800">
             <div class="flex items-center space-x-2">
               <span class="text-lg">🔍</span>
               <div class="flex-1">
@@ -107,12 +107,12 @@
       </div>
 
       <!-- Quick Replies -->
-      <div *ngIf="messages.length <= 1" class="px-6 py-4 border-t border-gray-100">
-        <p class="text-sm text-gray-600 mb-3">Quick suggestions:</p>
+      <div *ngIf="messages.length <= 1" class="px-6 py-4 border-t border-gray-100 dark:border-gray-700">
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Quick suggestions:</p>
         <div class="flex flex-wrap gap-2">
           <button *ngFor="let reply of quickReplies"
                   (click)="onQuickReply(reply)"
-                  class="px-3 py-2 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors border border-blue-200">
+                  class="px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-sm hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors border border-blue-200 dark:border-blue-800">
             {{ reply.text }}
           </button>
         </div>
@@ -120,13 +120,13 @@
 
       <!-- Input Area -->
       <form [formGroup]="chatForm" (ngSubmit)="onSendMessage()" 
-            class="p-6 border-t border-gray-100">
+            class="p-6 border-t border-gray-100 dark:border-gray-700">
         <div class="flex items-end space-x-4">
           <div class="flex-1">
             <textarea 
               formControlName="message"
               placeholder="Ask me about UAE tourist spots, transport, events, or emergency services..."
-              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 resize-none"
               rows="1"
               [attr.dir]="currentLanguage === 'ar' ? 'rtl' : 'ltr'"
               (keydown.enter)="onEnterKeyPress($event)"
@@ -136,7 +136,7 @@
           <button 
             type="submit"
             [disabled]="chatForm.invalid || isTyping"
-            class="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+            class="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors dark:bg-blue-700 dark:hover:bg-blue-800">
             <span class="sr-only">Send message</span>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
@@ -146,7 +146,7 @@
         
         <!-- Input Validation -->
         <div *ngIf="chatForm.get('message')?.invalid && chatForm.get('message')?.touched" 
-             class="mt-2 text-sm text-red-600">
+             class="mt-2 text-sm text-red-600 dark:text-red-400">
           Please enter a message to continue.
         </div>
       </form>
@@ -155,28 +155,28 @@
 
   <!-- Features Info -->
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
-    <div class="bg-white rounded-xl shadow-sm p-6">
-      <h2 class="text-lg font-semibold text-gray-900 mb-4">🇦🇪 What I Can Help You With</h2>
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6">
+      <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">🇦🇪 What I Can Help You With</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="text-center p-4 bg-blue-50 rounded-lg">
+        <div class="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
           <div class="text-2xl mb-2">🏖️</div>
-          <h3 class="font-medium text-gray-900">Tourist Spots</h3>
-          <p class="text-sm text-gray-600">Attractions, recommendations, hours</p>
+          <h3 class="font-medium text-gray-900 dark:text-white">Tourist Spots</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Attractions, recommendations, hours</p>
         </div>
-        <div class="text-center p-4 bg-green-50 rounded-lg">
+        <div class="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
           <div class="text-2xl mb-2">🚗</div>
-          <h3 class="font-medium text-gray-900">Transportation</h3>
-          <p class="text-sm text-gray-600">Metro, bus, taxi, routes</p>
+          <h3 class="font-medium text-gray-900 dark:text-white">Transportation</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Metro, bus, taxi, routes</p>
         </div>
-        <div class="text-center p-4 bg-purple-50 rounded-lg">
+        <div class="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
           <div class="text-2xl mb-2">🎉</div>
-          <h3 class="font-medium text-gray-900">Cultural Events</h3>
-          <p class="text-sm text-gray-600">Festivals, customs, dining</p>
+          <h3 class="font-medium text-gray-900 dark:text-white">Cultural Events</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Festivals, customs, dining</p>
         </div>
-        <div class="text-center p-4 bg-red-50 rounded-lg">
+        <div class="text-center p-4 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
           <div class="text-2xl mb-2">🚨</div>
-          <h3 class="font-medium text-gray-900">Emergency Services</h3>
-          <p class="text-sm text-gray-600">Contacts, hospitals, police</p>
+          <h3 class="font-medium text-gray-900 dark:text-white">Emergency Services</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Contacts, hospitals, police</p>
         </div>
       </div>
     </div>

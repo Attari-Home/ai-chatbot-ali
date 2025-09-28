@@ -1,5 +1,5 @@
 <!-- Hero Section -->
-<section class="hero-section bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20">
+<section class="hero-section bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20 dark:from-gray-800 dark:to-gray-900">
   <div class="container mx-auto px-4 text-center">
     <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/robotframework.svg" 
          alt="ALI Robotics Logo" 
@@ -9,10 +9,10 @@
     <h1 class="text-5xl font-bold mb-6">{{ content.hero.title }}</h1>
     <p class="text-xl mb-8 max-w-3xl mx-auto">{{ content.hero.subtitle }}</p>
     <div class="space-x-4">
-      <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+      <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 dark:bg-gray-200 dark:text-gray-800 dark:hover:bg-gray-300 transition-colors">
         {{ content.hero.primaryCta }}
       </button>
-      <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+      <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 dark:hover:bg-gray-200 dark:hover:text-gray-800 transition-colors">
         {{ content.hero.secondaryCta }}
       </button>
     </div>
@@ -20,33 +20,33 @@
 </section>
 
 <!-- Mission Section -->
-<section class="mission-section py-16 bg-gray-50">
+<section class="mission-section py-16 bg-gray-50 dark:bg-gray-900">
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-gray-800 mb-4">{{ content.mission.title }}</h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">{{ content.mission.description }}</p>
+      <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-4">{{ content.mission.title }}</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">{{ content.mission.description }}</p>
     </div>
     
     <div class="grid md:grid-cols-3 gap-8">
-      <div *ngFor="let feature of content.mission.features" class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-        <i [class]="feature.icon + ' text-4xl text-blue-600 mb-4'"></i>
-        <h3 class="text-xl font-semibold mb-3">{{ feature.title }}</h3>
-        <p class="text-gray-600">{{ feature.description }}</p>
+      <div *ngFor="let feature of content.mission.features" class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg dark:hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700">
+        <i [class]="feature.icon + ' text-4xl text-blue-600 dark:text-blue-400 mb-4'"></i>
+        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{{ feature.title }}</h3>
+        <p class="text-gray-600 dark:text-gray-300">{{ feature.description }}</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Projects Section -->
-<section class="projects-section py-16">
+<section class="projects-section py-16 bg-white dark:bg-gray-800">
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
-      <p class="text-xl text-gray-600">Explore our latest innovations in robotics and AI</p>
+      <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-4">Featured Projects</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300">Explore our latest innovations in robotics and AI</p>
     </div>
     
     <div class="grid md:grid-cols-3 gap-8">
-      <div *ngFor="let project of projects" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+      <div *ngFor="let project of projects" class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden hover:shadow-lg dark:hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-600">
         <img [src]="getImageUrl(project.image, 'project')" 
              [alt]="project.title" 
              class="w-full h-48 object-cover"
@@ -54,11 +54,11 @@
              loading="lazy">
         <div class="p-6">
           <div class="flex justify-between items-center mb-2">
-            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">{{ project.category }}</span>
-            <span class="text-sm text-gray-500">{{ project.status }}</span>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded">{{ project.category }}</span>
+            <span class="text-sm text-gray-500 dark:text-gray-400">{{ project.status }}</span>
           </div>
-          <h3 class="text-xl font-semibold mb-3">{{ project.title }}</h3>
-          <p class="text-gray-600">{{ project.description }}</p>
+          <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{{ project.title }}</h3>
+          <p class="text-gray-600 dark:text-gray-300">{{ project.description }}</p>
         </div>
       </div>
     </div>
@@ -66,24 +66,24 @@
 </section>
 
 <!-- News Section -->
-<section class="news-section py-16 bg-gray-50">
+<section class="news-section py-16 bg-gray-50 dark:bg-gray-900">
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-gray-800 mb-4">Latest News</h2>
-      <p class="text-xl text-gray-600">Stay updated with our recent achievements and announcements</p>
+      <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-4">Latest News</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300">Stay updated with our recent achievements and announcements</p>
     </div>
     
     <div class="grid md:grid-cols-2 gap-8">
-      <div *ngFor="let news of newsItems" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+      <div *ngFor="let news of newsItems" class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg dark:hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700">
         <img [src]="getImageUrl(news.image, 'news')" 
              [alt]="news.title" 
              class="w-full h-48 object-cover"
              (error)="onImageError($event, 'news')"
              loading="lazy">
         <div class="p-6">
-          <div class="text-sm text-gray-500 mb-2">{{ news.date | date:'mediumDate' }}</div>
-          <h3 class="text-xl font-semibold mb-3">{{ news.title }}</h3>
-          <p class="text-gray-600">{{ news.excerpt }}</p>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mb-2">{{ news.date | date:'mediumDate' }}</div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{{ news.title }}</h3>
+          <p class="text-gray-600 dark:text-gray-300">{{ news.excerpt }}</p>
         </div>
       </div>
     </div>
