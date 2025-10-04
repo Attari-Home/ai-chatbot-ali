@@ -8,6 +8,7 @@
     "serve": "ng serve --host 0.0.0.0 --port 4211",
     "build": "ng build --configuration production",
     "build:prod": "ng build --configuration production --output-hashing=all",
+    "build:gh-pages": "ng build --configuration production --base-href /ai-chatbot-ali/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false --browsers=ChromeHeadless",
     "test:watch": "ng test",
