@@ -21,7 +21,7 @@
     "status": "Active",
     "grade": 10,
     "joinDate": "2023-09-01",
-    "bio": "Expert in autonomous programming and vision systems, developing cutting-edge solutions for competition challenges.",
+    "bio": "Normal in autonomous programming and vision systems, developing cutting-edge solutions for competition challenges.",
     "skills": ["Java", "Python", "Computer Vision", "Machine Learning", "Git"],
     "achievements": ["Programming Excellence Award", "Autonomous Challenge Winner"],
     "avatar": "/assets/images/team/sara-avatar.jpg",
@@ -31,17 +31,17 @@
   },
   {
     "id": "tm003",
-    "name": "Omar Al-Rashid", 
+    "name": "Muhammad Ali Attari", 
     "role": "Lead Builder",
     "status": "Active",
-    "grade": 12,
+    "grade": 5,
     "joinDate": "2022-09-01",
     "bio": "Mechanical engineering enthusiast specializing in robot design and manufacturing with precision and creativity.",
     "skills": ["Mechanical Design", "3D Printing", "CNC", "Welding", "Project Management"],
     "achievements": ["Best Robot Design 2024", "Craftsmanship Award"],
-    "avatar": "/assets/images/team/omar-avatar.jpg",
+    "avatar": "/assets/images/team/muhammad-ali-attari-avatar.jpg",
     "socialLinks": {
-      "linkedin": "https://linkedin.com/in/omar-alrashid"
+      "linkedin": "https://linkedin.com/in/muhammad-ali-attari"
     }
   },
   {
@@ -61,10 +61,10 @@
   },
   {
     "id": "tm005",
-    "name": "Hassan Malik",
+    "name": "Muhammad Ahmed Raza",
     "role": "Programmer",
     "status": "Active",
-    "grade": 11,
+    "grade": 8,
     "joinDate": "2023-09-01", 
     "bio": "Backend systems specialist working on robot control systems and data analysis for performance optimization.",
     "skills": ["Java", "C++", "Data Analysis", "System Architecture"],

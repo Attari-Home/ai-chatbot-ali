@@ -161,6 +161,16 @@ export class AppComponent implements OnInit, OnDestroy {
     this.cursorInterval = handleMouseMove;
   }
 
+  onTabClick(event: Event): void {
+    const target = event.target as HTMLElement;
+    if (target.tagName === 'A') {
+      target.classList.add('animate-bounce');
+      setTimeout(() => {
+        target.classList.remove('animate-bounce');
+      }, 600); // Duration of bounce animation
+    }
+  }
+
   ngOnDestroy(): void {
     // Cleanup intervals and event listeners
     if (this.bubbleInterval) {

@@ -22,14 +22,14 @@
         <!-- Navigation and Theme Toggle -->
         <div class="hidden md:flex items-center space-x-8">
           <nav class="flex space-x-8" aria-label="Main navigation">
-            <a routerLink="/" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">Home</a>
-            <a routerLink="/chatbot" class="text-blue-600 hover:text-blue-700 px-3 py-2 text-sm font-bold bg-blue-50 rounded-md dark:text-blue-400 dark:bg-blue-900/20 dark:hover:bg-blue-900/30 transition-colors duration-200">🤖 AI Chatbot</a>
-            <a routerLink="/tourist-spots" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">Tourist Spots</a>
-            <a routerLink="/transport" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">Transport</a>
-            <a routerLink="/events" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">Events</a>
-            <a routerLink="/emergency" class="text-red-600 hover:text-red-700 px-3 py-2 text-sm font-medium dark:text-red-400 dark:hover:text-red-300 transition-colors duration-200">Emergency</a>
-            <a routerLink="/about" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">About</a>
-            <a routerLink="/contact" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200">Contact</a>
+            <a routerLink="/" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" (click)="onTabClick($event)">Home</a>
+            <a routerLink="/chatbot" class="text-blue-600 hover:text-blue-700 px-3 py-2 text-sm font-bold bg-blue-50 rounded-md dark:text-blue-400 dark:bg-blue-900/20 dark:hover:bg-blue-900/30 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" (click)="onTabClick($event)">🤖 AI Chatbot</a>
+            <a routerLink="/tourist-spots" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" (click)="onTabClick($event)">Tourist Spots</a>
+            <a routerLink="/transport" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" (click)="onTabClick($event)">Transport</a>
+            <a routerLink="/events" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" (click)="onTabClick($event)">Events</a>
+            <a routerLink="/emergency" class="text-red-600 hover:text-red-700 px-3 py-2 text-sm font-medium dark:text-red-400 dark:hover:text-red-300 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" (click)="onTabClick($event)">Emergency</a>
+            <a routerLink="/about" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" (click)="onTabClick($event)">About</a>
+            <a routerLink="/contact" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" (click)="onTabClick($event)">Contact</a>
           </nav>
           
           <!-- Theme Toggle Button -->
@@ -134,30 +134,38 @@
       aria-label="Mobile navigation">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-sm border-t border-gray-200 dark:bg-gray-900/95 dark:border-gray-700">
         <a routerLink="/" 
-          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200" 
+          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" 
           routerLinkActive="bg-gray-50 dark:bg-gray-800"
-          [routerLinkActiveOptions]="{exact: true}">Home</a>
+          [routerLinkActiveOptions]="{exact: true}"
+          (click)="onTabClick($event)">Home</a>
         <a routerLink="/chatbot" 
-          class="text-blue-600 hover:text-blue-700 block px-3 py-2 text-base font-medium dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-200" 
-          routerLinkActive="bg-blue-50 dark:bg-blue-900/20">🤖 AI Chatbot</a>
+          class="text-blue-600 hover:text-blue-700 block px-3 py-2 text-base font-medium dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" 
+          routerLinkActive="bg-blue-50 dark:bg-blue-900/20"
+          (click)="onTabClick($event)">🤖 AI Chatbot</a>
         <a routerLink="/tourist-spots" 
-          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200" 
-          routerLinkActive="bg-gray-50 dark:bg-gray-800">Tourist Spots</a>
+          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" 
+          routerLinkActive="bg-gray-50 dark:bg-gray-800"
+          (click)="onTabClick($event)">Tourist Spots</a>
         <a routerLink="/transport" 
-          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200" 
-          routerLinkActive="bg-gray-50 dark:bg-gray-800">Transport</a>
+          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" 
+          routerLinkActive="bg-gray-50 dark:bg-gray-800"
+          (click)="onTabClick($event)">Transport</a>
         <a routerLink="/events" 
-          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200" 
-          routerLinkActive="bg-gray-50 dark:bg-gray-800">Events</a>
+          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" 
+          routerLinkActive="bg-gray-50 dark:bg-gray-800"
+          (click)="onTabClick($event)">Events</a>
         <a routerLink="/emergency" 
-          class="text-red-600 hover:text-red-700 block px-3 py-2 text-base font-medium dark:text-red-400 dark:hover:text-red-300 transition-colors duration-200" 
-          routerLinkActive="bg-red-50 dark:bg-red-900/20">Emergency</a>
+          class="text-red-600 hover:text-red-700 block px-3 py-2 text-base font-medium dark:text-red-400 dark:hover:text-red-300 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" 
+          routerLinkActive="bg-red-50 dark:bg-red-900/20"
+          (click)="onTabClick($event)">Emergency</a>
         <a routerLink="/about" 
-          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200" 
-          routerLinkActive="bg-gray-50 dark:bg-gray-800">About</a>
+          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" 
+          routerLinkActive="bg-gray-50 dark:bg-gray-800"
+          (click)="onTabClick($event)">About</a>
         <a routerLink="/contact" 
-          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200" 
-          routerLinkActive="bg-gray-50 dark:bg-gray-800">Contact</a>
+          class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-200 hover:scale-105 transition-transform duration-200 ease-out" 
+          routerLinkActive="bg-gray-50 dark:bg-gray-800"
+          (click)="onTabClick($event)">Contact</a>
       </div>
     </nav>
   </header>

@@ -151,6 +151,14 @@
       "xl": "32px"
     }
   },
+  "animations": {
+    "hover": {
+      "scale": "transform scale-105 transition-transform duration-200 ease-out"
+    },
+    "click": {
+      "bubble": "animate-bounce"
+    }
+  },
   "components": {
     "button": {
       "variants": {
