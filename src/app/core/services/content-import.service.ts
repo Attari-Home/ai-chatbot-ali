@@ -26,8 +26,8 @@ export interface ContentTypeInfo {
   providedIn: 'root'
 })
 export class ContentImportService {
-  private readonly BASE_PATH = '/assets/data/';
-  private readonly SCHEMA_PATH = '/assets/schemas/';
+  private readonly BASE_PATH = 'assets/data/';
+  private readonly SCHEMA_PATH = 'assets/schemas/';
 
   constructor(private http: HttpClient) { }
 

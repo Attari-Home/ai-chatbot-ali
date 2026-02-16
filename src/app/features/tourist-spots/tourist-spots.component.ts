@@ -70,7 +70,7 @@ export class TouristSpotsComponent implements OnInit {
   }
 
   loadTouristSpots() {
-    this.http.get<TouristSpot[]>('/assets/data/tourist-spots/uae_tourist_spots.json')
+    this.http.get<TouristSpot[]>('assets/data/tourist-spots/uae_tourist_spots.json')
       .subscribe({
         next: (spots) => {
           this.touristSpots = spots;
